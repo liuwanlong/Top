@@ -10,7 +10,6 @@
 
 <ion-content>
   <ion-slides pager class="news_banner">
-
     <ion-slide class="banner_img1">
       <div class="banner_title">大熊猫向全国人民拜年</div>
     </ion-slide>
@@ -18,28 +17,30 @@
     <ion-slide class="banner_img2">
       <div class="banner_title">彭于晏现身周董演唱会</div>
     </ion-slide>
-
   </ion-slides>
-  <a class="wrap" [href]="n.url" *ngFor="let n of news">
-    <div class="content_left">
-      <img src="assets/images/2.jpg" class="news_img">
-    </div>
-    <div class="content_right">
-      <h3 class="news_title">{{n.title}}</h3>
-      <p class="news_body">国台办新闻发言人马晓光1月11日在例行记者会上表示。。。</p>
-      <p class="news_icon">
-        <span class="comment">
-          <ion-icon name="chatboxes" class="icon_comment" >
-          </ion-icon>
-        </span>0
-        <span class="eye">
-          <ion-icon name="eye" class="icon_comment">
-          </ion-icon>
-        </span>15
-        <span class="date">2016-01</span>
-      </p>
-    </div>
-  </a>
+
+  <div class="news_wrap">
+    <a class="wrap" [href]="n.url" *ngFor="let n of news">
+      <div class="content_left">
+        <img src="assets/images/2.jpg" class="news_img">
+      </div>
+      <div class="content_right">
+        <h3 class="news_title">{{n.title}}</h3>
+        <p class="news_body">国台办新闻发言人马晓光1月11日在例行记者会上表示。。。</p>
+        <p class="news_icon">
+            <span class="comment">
+              <ion-icon name="chatboxes" class="icon_comment">
+              </ion-icon>
+            </span>0
+          <span class="eye">
+              <ion-icon name="eye" class="icon_comment">
+              </ion-icon>
+            </span>15
+          <span class="date">2016-01</span>
+        </p>
+      </div>
+    </a>
+  </div>
 
   <!--<a [href]="n.url" *ngFor="let n of news">{{n.title}}</a>-->
 </ion-content>
