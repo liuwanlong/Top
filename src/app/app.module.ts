@@ -14,7 +14,7 @@ import {MinePage} from "../pages/mine/mine";
 import {RegisterPage} from "../pages/register/register";
 import {LoginPage} from "../pages/login/login";
 import {AgreementPage} from "../pages/agreement/agreement";
-import {HttpModule, JsonpModule} from "@angular/http";
+import {JsonpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
