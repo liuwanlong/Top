@@ -1,3 +1,70 @@
 page-mine {
+}
 
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.mine_bg {
+  height: 260px;
+  background: url("../assets/images/mine_bg.png") center;
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+.icon_head {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-top: 60px;
+  border-radius: 50%;
+  //background-color: #fff;
+  background-image: url("../assets/images/icon_account.png");
+  background-size: cover;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, .6);
+}
+.btns button{
+  margin: 10px;
+}
+
+.navs{
+  margin-top: 6%;
+}
+ion-icon{
+  margin-bottom: 0 !important;
+}
+
+button ion-icon {
+  margin-bottom: 0;
+}
+
+button:nth-child(1) ion-icon {
+  color: orange;
+}
+
+button:nth-child(2) ion-icon {
+  color: dodgerblue;
+}
+
+button:nth-child(3) ion-icon {
+  color: slategrey;
+}
+
+
+@media screen and (max-width: 320px) {
+  *{
+    font-size: 14px;
+  }
+  .mine_bg {
+    height: 220px;
+  }
+  .navs{
+    margin-top: 0;
+  }
+
+  .icon_head {
+    margin-top: 30px;
+  }
 }

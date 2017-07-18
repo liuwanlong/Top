@@ -1,0 +1,49 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>注 册</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col>
+      <ion-list inset>
+        <ion-item>
+          <ion-icon name="tablet-portrait" item-start></ion-icon>
+          <ion-input type="mobile" placeholder="输入手机号"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="key" item-start></ion-icon>
+          <ion-input type="password" placeholder="设置密码"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="flag" item-start></ion-icon>
+          <ion-input type="password" placeholder="确认密码"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="mail" item-start></ion-icon>
+          <ion-input type="email" placeholder="填写邮箱（用于找回密码）"></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col text-center>
+      <span>注册即代表您以同意<a (click)="return">每日头条使用协议</a></span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <button ion-button block color="light">提 交</button>
+    </ion-col>
+  </ion-row>
+</ion-content>
