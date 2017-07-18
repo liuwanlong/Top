@@ -27,12 +27,13 @@ import {JsonpModule} from "@angular/http";
     MinePage,
     RegisterPage,
     LoginPage,
-    AgreementPage
+    AgreementPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    JsonpModule,HttpModule
+    HttpModule,
+    JsonpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,5 +53,4 @@ import {JsonpModule} from "@angular/http";
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {
-}
+export class AppModule {}

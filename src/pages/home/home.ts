@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
-import {Jsonp} from "@angular/http";
 import "rxjs/add/operator/map";
-import "rxjs/add/operator/toPromise";
-
+declare var $: any;
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -30,11 +28,13 @@ export class HomePage {
     {icon: 'globe', name: '频道'},
   ];
 
-  constructor(public navCtrl: NavController, private jsonp: Jsonp) {
+  constructor(public navCtrl: NavController) {
   }
+
   getData() {
-    this.jsonp.get('http://api.dagoogle.cn/news/get-news?tableNum=1&pagesize=4&callback=?&justList=1').toPromise().then(res=>{
-      console.log(res);
+    let url = 'http://api.dagoogle.cn/news/single-news?callback=?&tableNum=1&news_id=64185';
+    $.getJSON(url,function(d){
+      console.log(d);
     })
   }
 }
