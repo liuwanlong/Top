@@ -22,6 +22,7 @@ export class NewsPage {
 
         for(let n of this.news){
 
+
         }
 
 
