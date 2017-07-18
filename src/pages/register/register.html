@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="register_header">
   <ion-navbar color="danger">
     <ion-title>注 册</ion-title>
   </ion-navbar>
@@ -34,13 +34,13 @@
 
   <ion-row>
     <ion-col text-center>
-      <span>注册即代表您以同意<a (click)="return">每日头条使用协议</a></span>
+      <span>注册即代表您同意<a (click)="toAgreement()">每日头条使用协议</a></span>
     </ion-col>
   </ion-row>
 
   <ion-row>
-    <ion-col>
-      <button ion-button block color="light">提 交</button>
+    <ion-col text-center>
+      <button ion-button style="width: 84%;" color="light">提 交</button>
     </ion-col>
   </ion-row>
 </ion-content>

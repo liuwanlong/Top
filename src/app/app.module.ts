@@ -13,6 +13,7 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {MinePage} from "../pages/mine/mine";
 import {RegisterPage} from "../pages/register/register";
 import {LoginPage} from "../pages/login/login";
+import {AgreementPage} from "../pages/agreement/agreement";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {LoginPage} from "../pages/login/login";
     TabsPage,
     MinePage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    AgreementPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import {LoginPage} from "../pages/login/login";
     TabsPage,
     MinePage,
     RegisterPage,
-    LoginPage
+    LoginPage,
+    AgreementPage
   ],
   providers: [
     StatusBar,

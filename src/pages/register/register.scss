@@ -3,7 +3,11 @@ page-register {
 }
 
 @media screen and (max-width: 320px) {
-  input,button{
+  input, button {
     font-size: 14px;
   }
+}
+
+.register_header button:nth-child(2) ion-icon {
+  color: #fff !important;
 }

@@ -1,29 +1,24 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import {AgreementPage} from "../agreement/agreement";
 
 /**
- * Generated class for the RegisterPage page.
+ * Generated class for the AgreementPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 
 @Component({
-  selector: 'page-register',
-  templateUrl: 'register.html',
+  selector: 'page-agreement',
+  templateUrl: 'agreement.html',
 })
-export class RegisterPage {
+export class AgreementPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad RegisterPage');
-  }
-
-  toAgreement(param?:Object){
-    this.navCtrl.push(AgreementPage,param)
+    console.log('ionViewDidLoad AgreementPage');
   }
 
 }
