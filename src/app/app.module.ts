@@ -11,10 +11,11 @@ import {TabsPage} from '../pages/tabs/tabs';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {MinePage} from "../pages/mine/mine";
-import {HttpModule, Jsonp, JsonpModule} from "@angular/http";
+import {HttpModule} from "@angular/http";
 import {RegisterPage} from "../pages/register/register";
 import {LoginPage} from "../pages/login/login";
 import {AgreementPage} from "../pages/agreement/agreement";
+import {JsonpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -51,4 +52,5 @@ import {AgreementPage} from "../pages/agreement/agreement";
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule {
+}
