@@ -1,17 +1,100 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>今日头条</ion-title>
-  </ion-navbar>
+<ion-header class="home-header">
+  <ion-row>
+    <ion-col col-4 class="city"><span>北京市</span><span class="tri-down">▲</span></ion-col>
+    <ion-col col-4 text-center><img class="logo" src="/assets/img/logo.png"></ion-col>
+    <ion-col col-4 text-end>
+      <ion-icon name="search" class="head-search"></ion-icon>
+    </ion-col>
+  </ion-row>
 </ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+  <ion-row>
+    <ion-slides class="home-slides">
+      <ion-slide class="slide" *ngFor="let slide of slides">
+        <img [src]="slide.image" class="slide-img">
+        <h3 [innerHTML]="slide.title" class="slide-title"></h3>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+  <ion-row class="cate-row">
+    <ion-col col-3 text-center *ngFor="let cate of cates" class="cate">
+      <p>
+        <ion-icon [color]="cate.color" [name]="cate.icon" class="cate-icon"></ion-icon>
+      </p>
+      <span [innerHTML]="cate.name" class="cate-name"></span>
+    </ion-col>
+  </ion-row>
+  <ion-row class="lists-top-title">
+    <ion-col col-6 text-start>
+      头条事件
+    </ion-col>
+    <ion-col (click)="getData()" col-6 text-end>
+      囧事推荐
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-list>
+      <ion-item>
+        <ion-col col-4 item-start>
+          <img src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
+        </ion-col>
+        <h2>Don't Know What To Do!</h2>
+        <p>I've had a pretty messed up day. If we just...</p>
+        <p class="list-new-btns">
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4</div>
+          </button>
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div>4</div>
+          </button>
+          <ion-note class="list-new-time">
+            1-20
+          </ion-note>
+        </p>
+      </ion-item>
+      <ion-item>
+        <ion-col col-4 item-start>
+          <img src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
+        </ion-col>
+        <h2>Don't Know What To Do!</h2>
+        <p>I've had a pretty messed up day. If we just...</p>
+        <p class="list-new-btns">
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4</div>
+          </button>
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div>4</div>
+          </button>
+          <ion-note class="list-new-time">
+            1-20
+          </ion-note>
+        </p>
+      </ion-item>
+      <ion-item>
+        <ion-col col-4 item-start>
+          <img src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
+        </ion-col>
+        <h2>Don't Know What To Do!</h2>
+        <p>I've had a pretty messed up day. If we just...</p>
+        <p class="list-new-btns">
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4</div>
+          </button>
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div>4</div>
+          </button>
+          <ion-note class="list-new-time">
+            1-20
+          </ion-note>
+        </p>
+      </ion-item>
+    </ion-list>
+  </ion-row>
 </ion-content>
+

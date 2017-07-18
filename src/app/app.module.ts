@@ -14,6 +14,7 @@ import {MinePage} from "../pages/mine/mine";
 import {RegisterPage} from "../pages/register/register";
 import {LoginPage} from "../pages/login/login";
 import {AgreementPage} from "../pages/agreement/agreement";
+import {HttpModule, JsonpModule} from "@angular/http";
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {AgreementPage} from "../pages/agreement/agreement";
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    JsonpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -49,5 +51,4 @@ import {AgreementPage} from "../pages/agreement/agreement";
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {
-}
+export class AppModule {}
