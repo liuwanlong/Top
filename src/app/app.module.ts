@@ -16,6 +16,7 @@ import {RegisterPage} from "../pages/register/register";
 import {LoginPage} from "../pages/login/login";
 import {AgreementPage} from "../pages/agreement/agreement";
 import {JsonpModule} from "@angular/http";
+import {NewsService} from "./news.service";
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {JsonpModule} from "@angular/http";
   providers: [
     StatusBar,
     SplashScreen,
+    NewsService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

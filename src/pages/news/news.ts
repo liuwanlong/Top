@@ -20,10 +20,10 @@ export class NewsPage {
         console.log(body.result.data);
         this.news = body.result.data;
 
-        for(let n of this.news){
-
-
-        }
+        // for(let n of this.news){
+        //
+        //
+        // }
 
 
 
