@@ -12,8 +12,8 @@
 <ion-content>
   <!-- 轮播 -->
   <ion-row>
-    <ion-slides class="home-slides" loop="true" autoplay="4000">
-      <ion-slide class="slide" *ngFor="let slide of slides">
+    <ion-slides class="home-slides" loop="true">
+      <ion-slide class="slide my-banner" *ngFor="let slide of slides">
         <img [src]="slide.top_image" class="slide-img">
         <h6 [innerHTML]="slide.title" class="slide-title"></h6>
       </ion-slide>
