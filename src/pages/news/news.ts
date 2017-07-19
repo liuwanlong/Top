@@ -31,6 +31,12 @@ export class NewsPage {
         console.log(body.result.data);
         this.news = body.result.data;
 
+        // for(let n of this.news){
+        //
+        //
+        // }
+
+
 
         http.get(this.news[0]['url']).toPromise().then((res:Response)=>{
           let htmlStr = res['_body'];

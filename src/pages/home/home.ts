@@ -1,12 +1,17 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import "rxjs/add/operator/map";
-declare var $: any;
+import {NewsService} from "../../app/news.service";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage implements OnInit{
+  ngOnInit(): void {
+    // throw new Error("Method not implemented.");
+  }
+
+
   slides = [
     {
       title: '8根电线杆成"路霸" 行车如过"梅花桩"',
@@ -28,13 +33,14 @@ export class HomePage {
     {icon: 'globe', name: '频道'},
   ];
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,private ns: NewsService){
   }
-
-  getData() {
-    let url = 'http://api.dagoogle.cn/news/single-news?callback=?&tableNum=1&news_id=64185';
-    $.getJSON(url,function(d){
-      console.log(d);
+  getData(){
+    this.ns.getNews(3,1,4,0).then(news=>{
+      console.log(news);
+    }).catch(err=>{
+      //
+      alert(err);
     })
   }
 }
