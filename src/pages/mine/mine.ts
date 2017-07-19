@@ -34,4 +34,5 @@ export class MinePage {
   //   this.navCtrl.pop();
   // }
 
+
 }

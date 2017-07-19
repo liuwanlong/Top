@@ -1,21 +1,25 @@
 <ion-header class="home-header">
-  <ion-row>
-    <ion-col col-4 class="city"><span>北京市</span><span class="tri-down">▲</span></ion-col>
-    <ion-col col-4 text-center><img class="logo" src="/assets/images/logo.png"></ion-col>
-    <ion-col col-4 text-end>
-      <ion-icon name="search" class="head-search"></ion-icon>
-    </ion-col>
-  </ion-row>
+  <ion-navbar>
+    <ion-row>
+      <ion-col col-4 class="city"><span>北京市</span><span class="tri-down">▲</span></ion-col>
+      <ion-col col-4 text-center><img class="logo" src="/assets/images/logo.png"></ion-col>
+      <ion-col col-4 text-end>
+        <ion-icon name="search" class="icon-search" (click)="search()"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
 </ion-header>
 <ion-content>
+  <!-- 轮播 -->
   <ion-row>
-    <ion-slides class="home-slides" loop="true" autoplay="2000">
-      <ion-slide class="slide" *ngFor="let slide of slides" >
+    <ion-slides class="home-slides" loop="true" autoplay="4000">
+      <ion-slide class="slide" *ngFor="let slide of slides">
         <img [src]="slide.image" class="slide-img">
         <h6 [innerHTML]="slide.title" class="slide-title"></h6>
       </ion-slide>
     </ion-slides>
   </ion-row>
+  <!-- 功能图标 -->
   <ion-row class="cate-row">
     <ion-col col-3 text-center *ngFor="let cate of cates" class="cate">
       <p>
@@ -24,6 +28,7 @@
       <span [innerHTML]="cate.name" class="cate-name"></span>
     </ion-col>
   </ion-row>
+  <!-- 新闻栏 -->
   <ion-row class="lists-top-title">
     <ion-col col-6 text-start>
       头条事件
@@ -32,11 +37,13 @@
       囧事推荐
     </ion-col>
   </ion-row>
+  <!-- 新闻列表 -->
   <ion-row>
     <ion-list>
       <ion-item>
         <ion-col col-4 item-start>
-          <img src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
+          <img
+            src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
         </ion-col>
         <h2>Don't Know What To Do!</h2>
         <p>I've had a pretty messed up day. If we just...</p>
@@ -56,7 +63,8 @@
       </ion-item>
       <ion-item>
         <ion-col col-4 item-start>
-          <img src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
+          <img
+            src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
         </ion-col>
         <h2>Don't Know What To Do!</h2>
         <p>I've had a pretty messed up day. If we just...</p>
@@ -76,7 +84,8 @@
       </ion-item>
       <ion-item>
         <ion-col col-4 item-start>
-          <img src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
+          <img
+            src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
         </ion-col>
         <h2>Don't Know What To Do!</h2>
         <p>I've had a pretty messed up day. If we just...</p>

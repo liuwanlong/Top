@@ -10,6 +10,17 @@ import 'rxjs/add/operator/toPromise';
 export class NewsPage {
   news:{}[];
 
+  slides = [
+    {
+      title: '8根电线杆成"路霸" 行车如过"梅花桩"',
+      image: "../assets/images/2.jpg"
+    },
+    {
+      title: '这位大老虎退休后两次被查 从公诉到一审仅用10天',
+      image: "../assets/images/3.jpg"
+    },
+  ];
+
   constructor(public navCtrl: NavController, public jsonp:Jsonp, public http:Http) {
     let headers = new Headers();
     headers.append('Authorization','APPCODE 0f375d8286b74ec6b4056e74d3afd4b7');
@@ -19,12 +30,6 @@ export class NewsPage {
         var body = res.json();
         console.log(body.result.data);
         this.news = body.result.data;
-
-        for(let n of this.news){
-
-
-        }
-
 
 
         http.get(this.news[0]['url']).toPromise().then((res:Response)=>{

@@ -12,12 +12,14 @@
         <ion-list inset>
           <ion-item>
             <ion-icon name="tablet-portrait" item-start></ion-icon>
-            <ion-input type="mobile" maxlength="11" placeholder="用户名（手机号）"></ion-input>
+            <ion-input type="mobile" placeholder="用户名（手机号）"
+                       maxlength="11" onautocomplete="return false"></ion-input>
           </ion-item>
 
           <ion-item class="bot_radius">
             <ion-icon name="key" item-start></ion-icon>
-            <ion-input type="password" minlength="6" maxlength="16" placeholder="密码"></ion-input>
+            <ion-input type="password" minlength="6" maxlength="16"
+                       placeholder="密码" onautocomplete="return false"></ion-input>
           </ion-item>
 
           <ion-col text-right>
