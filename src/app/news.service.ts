@@ -1,12 +1,13 @@
 import {Injectable} from '@angular/core';
-import {Http, Jsonp} from "@angular/http";
-
-declare var $: any;
+import {Http} from "@angular/http";
 
 @Injectable()
-export class NewsService{
-  constructor(public jsonp:Jsonp) {
+export class NewsService {
+  type = ['toutiao', 'yule', 'junshi', 'qiche', 'caijing', 'xiaohua', 'tiyu', 'keji'];
+
+  constructor(public http: Http) {
   }
+
   /*
    * tableNum:新闻分类
    *        1 =>  头条
@@ -20,19 +21,18 @@ export class NewsService{
    * page:当前页,第几页
    * pagesize: 每页显示数目
    * justList: 是否仅扣回新闻列表 1是0否
-  * */
-  getNews(tableNum,page,pagesize,justList){
-    let url = 'http://api.dagoogle.cn/news/get-news?tableNum='+tableNum+'&page='+page+'&pagesize='+pagesize+'&callback=JSONP_CALLBACK&justList='+justList;
-    return this.jsonp.get(url).toPromise().then(res=>{
-      return res.json().data
-    }).catch(err=>{
-      let error;
-      if (err.message){
-        error = err.message
-      }else{
-        error = err;
-      }
-      return Promise.reject(error)
-    })
+   * */
+  getNews(typeNum) {
+    console.log(this.type[typeNum - 1]);
+    return this.http.get('http://localhost:3000/getnews' + '/' + this.type[typeNum - 1])
+      .toPromise()
+      .then(res => {
+        var data = res.json().data;
+        return data;
+      }).catch(this.handleError)
+  }
+
+  handleError(error) {
+    return Promise.reject(error.message || error)
   }
 }

@@ -7,21 +7,11 @@ import {NewsService} from "../../app/news.service";
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit{
+  slides: any;
+
   ngOnInit(): void {
-    // throw new Error("Method not implemented.");
+    this.getData(1);
   }
-
-
-  slides = [
-    {
-      title: '8根电线杆成"路霸" 行车如过"梅花桩"',
-      image: "http://cms-bucket.nosdn.127.net/ee96d28a742c43a792d244d836dfcd8020170718082126.jpeg?imageView&thumbnail=750y380&quality=45&type=webp&interlace=1&enlarge=1"
-    },
-    {
-      title: '这位大老虎退休后两次被查 从公诉到一审仅用10天',
-      image: "http://cms-bucket.nosdn.127.net/998f555b33044df68d71cbec2a6d8fdb20170718093803.png?imageView&thumbnail=750y380&quality=45&type=webp&interlace=1&enlarge=1"
-    },
-  ];
   cates = [
     {icon: 'thumbs-up', name: '推荐'},
     {icon: 'bulb', name: '热点'},
@@ -35,12 +25,9 @@ export class HomePage implements OnInit{
 
   constructor(public navCtrl: NavController,private ns: NewsService){
   }
-  getData(){
-    this.ns.getNews(3,1,4,0).then(news=>{
-      console.log(news);
-    }).catch(err=>{
-      //
-      alert(err);
+  getData(typeNum){
+    this.ns.getNews(typeNum).then(data=>{
+      this.slides=data;
     })
   }
 }
