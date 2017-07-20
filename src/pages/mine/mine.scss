@@ -47,6 +47,13 @@ button:nth-child(3) ion-icon {
   color: slategrey;
 }
 
+.user_info{
+  color: #fff;
+}
+.user_info h4{
+  text-shadow: 3px 3px 5px #000;
+}
+
 
 @media screen and (max-width: 320px) {
   *{

@@ -31,8 +31,8 @@ export class LoginPage {
             if(result.json().result==false){
                 this.as.showAlert('登陆结果','登录失败！请检查您的用户名或密码',['确定']);
             }else{      // 如果登录成功，存储个人信息、跳转、（同步个人设置）
-                localStorage.urrentUser = JSON.stringify(result.json().result);
-                console.log(JSON.parse(localStorage.currentUser));
+                localStorage.currentUser = JSON.stringify(result.json().result);
+                // console.log(JSON.parse(localStorage.currentUser));
                 this.navCtrl.pop();
             }
         })

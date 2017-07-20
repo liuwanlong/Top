@@ -9,11 +9,15 @@
     </ion-col>
   </ion-row>
 
-  <!-- 登录 注册按钮 -->
   <ion-row>
-    <ion-col text-center class="btns">
+    <!-- 登录 注册按钮 -->
+    <ion-col text-center class="btns"  *ngIf="!currentUser">
       <button ion-button color="danger" (click)="toRegisterPage()">注 册</button>
       <button ion-button (click)="toLoginPage()">登 录</button>
+    </ion-col>
+    <!-- 用户昵称（用户名） -->
+    <ion-col text-center *ngIf="currentUser" class="user_info">
+      <h4>{{currentUser.username}}</h4>
     </ion-col>
   </ion-row>
 
