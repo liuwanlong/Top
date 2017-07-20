@@ -13,29 +13,27 @@
 </ion-header>
 
 
-<ion-content>
-  <ion-row>
-    <ion-list class="home-list">
-      <ion-item *ngFor="let slide of list_slides" (click)="goDetail(slide)">
-        <ion-col col-1 item-start>
-          <img [src]="slide.top_image">
-        </ion-col>
-        <h3 [innerHTML]="slide.title"></h3>
-        <p [innerHTML]="slide.digest"></p>
-        <p class="list-new-btns">
-          <button color="dark" ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div [innerHTML]="slide.r_count"></div>
-          </button>
-          <button color="dark" ion-button icon-left clear small>
-            <ion-icon name="eye"></ion-icon>
-            <div [innerHTML]="slide.v_count"></div>
-          </button>
-          <ion-note class="list-new-time">
-            1-20
-          </ion-note>
+<ion-content class="arc_content">
+  <div class="news_wrap">
+    <ion-row *ngFor="let slide of list_slides" (click)="goDetail(slide)">
+      <ion-col col-4>
+        <div class="news_left">
+          <img src="{{slide.top_image}}" class="news_img">
+        </div>
+      </ion-col>
+      <ion-col>
+        <h3 class="news_title">{{slide.title}}</h3>
+        <p class="news_body">{{slide.digest}}</p>
+        <p class="news_icon">
+            <span>
+              <ion-icon color="primary" name="chatboxes"></ion-icon>
+            </span>{{slide.r_count}}
+          <span class="eye">
+              <ion-icon color="primary" name="eye"></ion-icon>
+            </span>{{slide.v_count}}
+          <span class="date">{{slide.edit_time}}</span>
         </p>
-      </ion-item>
-    </ion-list>
-  </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
 </ion-content>
