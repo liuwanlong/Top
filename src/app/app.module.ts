@@ -18,6 +18,7 @@ import {AgreementPage} from "../pages/agreement/agreement";
 import {JsonpModule} from "@angular/http";
 import {NewsService} from "./news.service";
 import {DetailPage} from "../pages/detail/detail";
+import {ListPage} from "../pages/list/list";
 
 @NgModule({
   declarations: [
@@ -30,11 +31,14 @@ import {DetailPage} from "../pages/detail/detail";
     RegisterPage,
     LoginPage,
     AgreementPage,
-    DetailPage
+    DetailPage,
+    ListPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages: 'true'
+    }),
     HttpModule,
     JsonpModule,
   ],
@@ -49,7 +53,8 @@ import {DetailPage} from "../pages/detail/detail";
     RegisterPage,
     LoginPage,
     AgreementPage,
-    DetailPage
+    DetailPage,
+    ListPage
   ],
   providers: [
     StatusBar,

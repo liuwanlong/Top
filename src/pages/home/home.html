@@ -21,7 +21,7 @@
   </ion-row>
   <!-- 功能图标 -->
   <ion-row class="cate-row">
-    <ion-col col-3 text-center *ngFor="let cate of cates" class="cate">
+    <ion-col col-3 text-center *ngFor="let cate of cates" class="cate" (click)="goList(cate.type)">
       <p>
         <ion-icon [color]="cate.color" [name]="cate.icon" class="cate-icon"></ion-icon>
       </p>

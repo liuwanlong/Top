@@ -1,0 +1,41 @@
+<!--
+  Generated template for the ListPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>list</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row>
+    <ion-list class="home-list">
+      <ion-item *ngFor="let slide of list_slides" (click)="goDetail(slide)">
+        <ion-col col-1 item-start>
+          <img [src]="slide.top_image">
+        </ion-col>
+        <h3 [innerHTML]="slide.title"></h3>
+        <p [innerHTML]="slide.digest"></p>
+        <p class="list-new-btns">
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="text"></ion-icon>
+            <div>4</div>
+          </button>
+          <button color="dark" ion-button icon-left clear small>
+            <ion-icon name="eye"></ion-icon>
+            <div>4</div>
+          </button>
+          <ion-note class="list-new-time">
+            1-20
+          </ion-note>
+        </p>
+      </ion-item>
+    </ion-list>
+  </ion-row>
+</ion-content>
