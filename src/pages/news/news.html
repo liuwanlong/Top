@@ -11,34 +11,34 @@
 </ion-header>
 
 <ion-content>
-    <ion-row>
-      <ion-slides class="home-slides" loop="true" autoplay="4000">
-        <ion-slide class="slide my-banner" *ngFor="let slide of slides">
-          <img [src]="slide.image" class="slide-img">
-          <h6 [innerHTML]="slide.title" class="slide-title"></h6>
-        </ion-slide>
-      </ion-slides>
-    </ion-row>
+  <ion-row style="height: 200px">
+    <ion-slides class="home-slides">
+      <ion-slide class="slide my-banner" *ngFor="let slide of banner_slides" (click)="goDetail(slide)">
+        <img [src]="slide.top_image" class="slide-img">
+        <h6 [innerHTML]="slide.title" class="slide-title"></h6>
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
 
 <!-- 新闻 -->
   <div class="news_wrap">
-    <ion-row *ngFor="let n of news">
+    <ion-row *ngFor="let slide of news" (click)="goDetail(slide)">
       <ion-col col-4>
         <div class="news_left">
-          <img src="assets/images/2.jpg" class="news_img">
+          <img src="{{slide.top_image}}" class="news_img">
         </div>
       </ion-col>
       <ion-col>
-        <h3 class="news_title">{{n.title}}</h3>
-        <p class="news_body">国台办新闻发言人马晓光1月11日在例行记者会上表示..</p>
+        <h3 class="news_title">{{slide.title}}</h3>
+        <p class="news_body">{{slide.digest}}</p>
         <p class="news_icon">
             <span>
               <ion-icon color="primary" name="chatboxes"></ion-icon>
-            </span>0
+            </span>{{slide.r_count}}
           <span class="eye">
               <ion-icon color="primary" name="eye"></ion-icon>
-            </span>15
-          <span class="date">2016-01</span>
+            </span>{{slide.v_count}}
+          <span class="date">{{slide.edit_time}}</span>
         </p>
       </ion-col>
     </ion-row>

@@ -15,8 +15,8 @@
 
 <ion-content padding>
   <h3 [innerHTML]="slide.title"></h3>
-  <span [innerHTML]="slide.edit_time"></span>
-  <div class="detail-cont" [innerHTML]="slide.content"></div>
+  <span [innerHTML]="slide.source"></span><span [innerHTML]="slide.edit_time" class="article_date"></span>
+  <div [innerHTML]="slide.content" class="article_content"></div>
 </ion-content>
 
 <ion-footer>
