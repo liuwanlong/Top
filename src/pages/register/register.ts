@@ -48,7 +48,7 @@ export class RegisterPage {
         this.http.post('http://localhost:3000/users', user)
             .toPromise().then(result => {
             if (result.json().result == 'nameExit') {
-                this.as.showAlert('注册结果','该手机号已被注册！请更换手机号',['确定']);
+                this.as.showAlert('注册结果','该用户名已被注册！',['确定']);
             } else if (result.json().result == 'mobileExit') {
                 this.as.showAlert('注册结果','该手机号已被注册！请更换手机号',['确定']);
             } else {

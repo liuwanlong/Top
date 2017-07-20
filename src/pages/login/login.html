@@ -14,14 +14,14 @@
                         <ion-item>
                             <ion-icon name="person" item-start></ion-icon>
                             <ion-input type="text" placeholder="用户名 / 手机号"
-                                       name="username" #username="ngModel" minlength="6"
+                                       name="username" #username="ngModel" maxlength="11"
                                        required [(ngModel)]="login.username"></ion-input>
                         </ion-item>
                         <!-- 密码 -->
-                        <ion-item>
+                        <ion-item class="login_pwd">
                             <ion-icon name="key" item-start></ion-icon>
                             <ion-input type="password" placeholder="密码"
-                                       name="password" #password="ngModel" minlength="6"
+                                       name="password" #password="ngModel" maxlength="16"
                                        required [(ngModel)]="login.password"></ion-input>
                         </ion-item>
 
