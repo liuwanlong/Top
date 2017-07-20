@@ -13,7 +13,7 @@
   <!-- 轮播 -->
   <ion-row>
     <ion-slides class="home-slides" loop="true">
-      <ion-slide class="slide my-banner" *ngFor="let slide of slides">
+      <ion-slide class="slide my-banner" *ngFor="let slide of banner_slides" (click)="goDetail(slide)">
         <img [src]="slide.top_image" class="slide-img">
         <h6 [innerHTML]="slide.title" class="slide-title"></h6>
       </ion-slide>
@@ -35,55 +35,13 @@
   </ion-row>
   <!-- 新闻列表 -->
   <ion-row>
-    <ion-list>
-      <ion-item>
-        <ion-col col-4 item-start>
-          <img src="http://easyread.ph.126.net/hREiTkrDisOJfgp7bStMTA==/7917099446502961567.jpg">
+    <ion-list class="home-list">
+      <ion-item *ngFor="let slide of list_slides" (click)="goDetail(slide)">
+        <ion-col col-1 item-start>
+          <img [src]="slide.top_image">
         </ion-col>
-        <h2>Don't Know What To Do!</h2>
-        <p>I've had a pretty messed up day. If we just...</p>
-        <p class="list-new-btns">
-          <button color="dark" ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>4</div>
-          </button>
-          <button color="dark" ion-button icon-left clear small>
-            <ion-icon name="eye"></ion-icon>
-            <div>4</div>
-          </button>
-          <ion-note class="list-new-time">
-            1-20
-          </ion-note>
-        </p>
-      </ion-item>
-      <ion-item>
-        <ion-col col-4 item-start>
-          <img
-            src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
-        </ion-col>
-        <h2>Don't Know What To Do!</h2>
-        <p>I've had a pretty messed up day. If we just...</p>
-        <p class="list-new-btns">
-          <button color="dark" ion-button icon-left clear small>
-            <ion-icon name="text"></ion-icon>
-            <div>4</div>
-          </button>
-          <button color="dark" ion-button icon-left clear small>
-            <ion-icon name="eye"></ion-icon>
-            <div>4</div>
-          </button>
-          <ion-note class="list-new-time">
-            1-20
-          </ion-note>
-        </p>
-      </ion-item>
-      <ion-item>
-        <ion-col col-4 item-start>
-          <img
-            src="http://cms-bucket.nosdn.127.net/25a92dd6c060446c8e1e589b55bc652420170718080658.png?imageView&thumbnail=220y165&quality=45&type=webp&interlace=1&enlarge=1">
-        </ion-col>
-        <h2>Don't Know What To Do!</h2>
-        <p>I've had a pretty messed up day. If we just...</p>
+        <h3 [innerHTML]="slide.title"></h3>
+        <p [innerHTML]="slide.digest"></p>
         <p class="list-new-btns">
           <button color="dark" ion-button icon-left clear small>
             <ion-icon name="text"></ion-icon>
