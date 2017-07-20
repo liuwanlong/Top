@@ -15,10 +15,10 @@ import {HttpModule} from "@angular/http";
 import {RegisterPage} from "../pages/register/register";
 import {LoginPage} from "../pages/login/login";
 import {AgreementPage} from "../pages/agreement/agreement";
-import {JsonpModule} from "@angular/http";
 import {NewsService} from "./news.service";
 import {DetailPage} from "../pages/detail/detail";
 import {ListPage} from "../pages/list/list";
+import {VideoDetailPage} from "../pages/video-detail/video-detail";
 
 @NgModule({
   declarations: [
@@ -32,7 +32,8 @@ import {ListPage} from "../pages/list/list";
     LoginPage,
     AgreementPage,
     DetailPage,
-    ListPage
+    ListPage,
+    VideoDetailPage,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,6 @@ import {ListPage} from "../pages/list/list";
       tabsHideOnSubPages: 'true'
     }),
     HttpModule,
-    JsonpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -54,7 +54,8 @@ import {ListPage} from "../pages/list/list";
     LoginPage,
     AgreementPage,
     DetailPage,
-    ListPage
+    ListPage,
+    VideoDetailPage
   ],
   providers: [
     StatusBar,

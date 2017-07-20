@@ -1,17 +1,24 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Video
+    <ion-title text-center>
+      视频
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left (click)="getData()"></ion-icon>
-      @ionicframework
+
+    <ion-item *ngFor="let news of newsArr">
+      <ion-card>
+        <ion-card-content>
+          <a (click)="videoDetailPage(news,newsArr)">
+            <img src="{{news.cover_pic}}" alt="">
+          </a>
+          <br>
+          <p class="title_des">主题：{{news.caption}}</p>
+        </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
 </ion-content>

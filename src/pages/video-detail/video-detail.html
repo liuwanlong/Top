@@ -1,0 +1,57 @@
+<!--
+  Generated template for the VideoDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>videoDetail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-card>
+    <ion-card-content>
+
+      <ion-item style="border: 1px solid gainsboro">
+        <ion-avatar item-start>
+          <img src="{{news.avatar}}" style="width: 60px;height: 60px;">
+        </ion-avatar>
+        <h2 style="padding:5px;">{{news.screen_name}}</h2>
+        <p>ID:{{news.user_id}}</p>
+      </ion-item>
+      <br>
+      <iframe
+        [src]="videoUrl"
+        frameborder="1"
+        width="100%"
+        height="385px"
+        scrolling="no">
+      </iframe>
+      <br>
+      <p>{{news.caption}}</p>
+
+
+    </ion-card-content>
+  </ion-card>
+  <h2>更多美拍</h2>
+  <ion-item *ngFor="let news of newsArr">
+    <ion-card>
+      <ion-card-content>
+        <a (click)="videoDetailPage(news,newsArr)">
+          <img src="{{news.cover_pic}}" alt="">
+        </a>
+        <br>
+        <p class="title_des">主题：{{news.caption}}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+
+</ion-content>

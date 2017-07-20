@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
-import {NewsService} from "../../app/news.service";
 import {DetailPage} from "../detail/detail";
 
 @Component({
@@ -10,7 +9,6 @@ import {DetailPage} from "../detail/detail";
   templateUrl: 'news.html'
 })
 export class NewsPage implements OnInit{
-  initTopNews: any;
   banner_slides: any;
   allnews: {}[];
   news: {}[];
@@ -18,7 +16,7 @@ export class NewsPage implements OnInit{
     this.getData();
   }
 
-  constructor(public navCtrl: NavController, public http: Http,private ns: NewsService) {
+  constructor(public navCtrl: NavController, public http: Http) {
 
 
     }
