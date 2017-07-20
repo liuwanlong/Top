@@ -1,4 +1,7 @@
 import {Injectable} from '@angular/core';
+import {Jsonp} from "@angular/http";
+
+// declare var $: any;
 import {Http} from "@angular/http";
 
 @Injectable()

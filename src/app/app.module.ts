@@ -18,6 +18,7 @@ import {AgreementPage} from "../pages/agreement/agreement";
 import {NewsService} from "./news.service";
 import {DetailPage} from "../pages/detail/detail";
 import {ListPage} from "../pages/list/list";
+import { SimpleAlertProvider } from '../providers/simple-alert/simple-alert';
 import {VideoDetailPage} from "../pages/video-detail/video-detail";
 
 @NgModule({
@@ -61,7 +62,8 @@ import {VideoDetailPage} from "../pages/video-detail/video-detail";
     StatusBar,
     SplashScreen,
     NewsService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SimpleAlertProvider
   ]
 })
 export class AppModule {}
