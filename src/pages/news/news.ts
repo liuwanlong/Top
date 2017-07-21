@@ -23,7 +23,6 @@ export class NewsPage implements OnInit{
 
   constructor(public navCtrl: NavController, public http: Http,private ns: NewsService) {
 
-
     }
     getData(){
       return this.http.get('http://localhost:3000/users/')
