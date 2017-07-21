@@ -1,17 +1,46 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Video
-    </ion-title>
+    <ion-row>
+      <ion-col col-4></ion-col>
+      <ion-col col-4 text-center class="ss_col">视频</ion-col>
+      <ion-col col-4>
+        <ion-icon name="search" class="icon-search" (click)="search()"></ion-icon>
+      </ion-col>
+    </ion-row>
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-left (click)="getData()"></ion-icon>
-      @ionicframework
+    <ion-item *ngFor="let news of newsArr">
+      <ion-card>
+        <ion-card-content>
+          <a (click)="videoDetailPage(news,newsArr)">
+            <img src="{{news.cover_pic}}" alt="">
+          </a>
+          <br>
+          <p class="title_des">主题：{{news.caption}}</p>
+        </ion-card-content>
+      </ion-card>
     </ion-item>
   </ion-list>
+
+  <ion-refresher pulling-text="下拉刷新" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+
+
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

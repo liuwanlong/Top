@@ -15,10 +15,11 @@ import {HttpModule} from "@angular/http";
 import {RegisterPage} from "../pages/register/register";
 import {LoginPage} from "../pages/login/login";
 import {AgreementPage} from "../pages/agreement/agreement";
-import {JsonpModule} from "@angular/http";
 import {NewsService} from "./news.service";
 import {DetailPage} from "../pages/detail/detail";
 import {ListPage} from "../pages/list/list";
+import { SimpleAlertProvider } from '../providers/simple-alert/simple-alert';
+import {VideoDetailPage} from "../pages/video-detail/video-detail";
 import {SearchPage} from "../pages/search/search";
 
 @NgModule({
@@ -34,6 +35,7 @@ import {SearchPage} from "../pages/search/search";
     AgreementPage,
     DetailPage,
     ListPage,
+    VideoDetailPage,
     SearchPage
   ],
   imports: [
@@ -42,7 +44,6 @@ import {SearchPage} from "../pages/search/search";
       tabsHideOnSubPages: 'true'
     }),
     HttpModule,
-    JsonpModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,13 +58,15 @@ import {SearchPage} from "../pages/search/search";
     AgreementPage,
     DetailPage,
     ListPage,
+    VideoDetailPage,
     SearchPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     NewsService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SimpleAlertProvider
   ]
 })
 export class AppModule {}

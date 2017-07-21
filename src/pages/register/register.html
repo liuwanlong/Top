@@ -1,50 +1,82 @@
-<ion-header class="reg_header">
-  <ion-navbar color="danger">
-    <ion-title>注 册</ion-title>
-  </ion-navbar>
+<ion-header class="reg_header"  (click)="showAlert('aaa','hhahaha',['555'])">
+    <ion-navbar color="danger">
+        <ion-title>注 册</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content no-bounce padding class="reg_content">
-  <ion-row>
-    <ion-col>
-      <ion-list inset>
-        <ion-item>
-          <ion-icon name="tablet-portrait" item-start></ion-icon>
-          <ion-input type="mobile" maxlength="11" placeholder="输入手机号"
-                     maxlength="11"></ion-input>
-        </ion-item>
+    <form #regForm="ngForm">
+        <ion-row>
+            <ion-col>
+                <ion-list inset>
+                    <!-- 用户名 -->
+                    <ion-item [ngClass]="{input_err: username.errors?.minlength || username.errors?.maxlength}">
+                        <ion-icon name="person" item-start></ion-icon>
+                        <ion-input type="text" placeholder="用户名"
+                                   name="username" #username="ngModel"
+                                   required minlength="6" maxlength="11"
+                                   [(ngModel)]="user.username"></ion-input>
+                    </ion-item>
+                    <!-- 密码 -->
+                    <ion-item [ngClass]="{input_err: password.errors?.minlength || password.errors?.maxlength}">
+                        <ion-icon name="key" item-start></ion-icon>
+                        <ion-input type="{{showPwd?'text':'password'}}" placeholder="设置密码"
+                                   name="password" #password="ngModel"
+                                   required minlength="6" maxlength="16"
+                                   [(ngModel)]="user.password"></ion-input>
+                        <ion-icon *ngIf="!password.errors?.required" (click)="showPwd=!showPwd"
+                                  name="{{showPwd?'eye':'eye-outline'}}" item-right></ion-icon>
+                    </ion-item>
+                    <!-- 再次输入密码 -->
+                    <!--<ion-item [ngClass]="{input_err: secPwd.errors?.minlength || secPwd.errors?.maxlength}">-->
+                        <!--<ion-icon name="key" item-start></ion-icon>-->
+                        <!--<ion-input type="password" placeholder="再次输入密码"-->
+                                   <!--name="secPwd" #secPwd="ngModel"-->
+                                   <!--required minlength="6" maxlength="16"-->
+                                   <!--[(ngModel)]="user.secPwd"></ion-input>-->
+                    <!--</ion-item>-->
+                    <!-- 手机号 -->
+                    <ion-item [ngClass]="{input_err: phone.errors?.pattern}">
+                        <ion-icon name="tablet-portrait" item-start></ion-icon>
+                        <ion-input type="text" placeholder="输入手机号"
+                                   name="phone" #phone="ngModel" maxlength="11"
+                                   required [pattern]="mobileReg"
+                                   [(ngModel)]="user.mobile"></ion-input>
+                    </ion-item>
+                    <!-- 邮箱 -->
+                    <ion-item [ngClass]="{input_err: email.errors?.pattern}">
+                        <ion-icon name="mail" item-start></ion-icon>
+                        <ion-input type="email" required placeholder="填写邮箱（用于找回密码）"
+                                   [pattern]="emailReg"
+                                   [(ngModel)]="user.email" name="email" #email="ngModel"></ion-input>
+                    </ion-item>
 
-        <ion-item>
-          <ion-icon name="key" item-start></ion-icon>
-          <ion-input type="password" minlength="6" maxlength="16"
-                     maxlength="11" placeholder="设置密码"></ion-input>
-        </ion-item>
+                    <!-- 验证结果 -->
+                    <!--<ion-item>-->
+                        <!--<div>姓名：{{username.valid}} {{username.errors|json}}</div>-->
+                        <!--<div>密码：{{password.valid}} {{password.errors|json}}</div>-->
+                        <!--<div>核对：{{secPwd[0]}} {{secPwd.errors|json}}</div>-->
+                        <!--<div>手机：{{phone.valid}} {{phone.errors|json}}</div>-->
+                        <!--<div>邮箱：{{email.valid}} {{email.errors|json}}</div>-->
+                        <!--<div>表单：form:{{regForm.form.valid}}</div>-->
+                    <!--</ion-item>-->
+                </ion-list>
+            </ion-col>
+        </ion-row>
 
-        <ion-item>
-          <ion-icon name="flag" item-start></ion-icon>
-          <ion-input type="password" minlength="6" maxlength="16"
-                     maxlength="11" placeholder="确认密码"></ion-input>
-        </ion-item>
+        <ion-row class="xieyi">
+            <ion-col text-center>
+                <span>注册即代表您同意<a (click)="toAgreement()">每日头条使用协议</a></span>
+            </ion-col>
+        </ion-row>
 
-        <ion-item>
-          <ion-icon name="mail" item-start></ion-icon>
-          <ion-input type="email" placeholder="填写邮箱（用于找回密码）"
-                     maxlength="11"></ion-input>
-        </ion-item>
-
-      </ion-list>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col text-center>
-      <span>注册即代表您同意<a (click)="toAgreement()">每日头条使用协议</a></span>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col text-center>
-      <button ion-button style="width: 84%;" color="light">提 交</button>
-    </ion-col>
-  </ion-row>
+        <ion-row>
+            <ion-col text-center>
+                <button ion-button style="width: 84%;" color="light"
+                        (click)="regSubmit(user)"
+                        [disabled]="!regForm.form.valid">提 交
+                </button>
+            </ion-col>
+        </ion-row>
+    </form>
 </ion-content>

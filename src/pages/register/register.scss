@@ -14,3 +14,15 @@ page-register {
 input{
   font-size: 15px;
 }
+.input_err{
+  color: red;
+}
+
+.reg_content .item-ios [item-right]{
+  display: block;
+  margin-top: 0;
+  padding: 8px 4px;
+}
+.reg_content .xieyi{
+  padding-top: 40px;
+}

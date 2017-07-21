@@ -48,4 +48,5 @@ export class HomePage implements OnInit {
   search(){
     this.navCtrl.push(SearchPage);
   }
+
 }

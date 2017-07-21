@@ -1,37 +1,43 @@
 <ion-header class="login_header">
-  <ion-navbar color="primary">
-    <ion-title>登 录</ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+        <ion-title>登 录</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <div class="login_bg"></div>
-  <div class="login_content" padding>
-    <ion-row>
-      <ion-col>
-        <ion-list inset>
-          <ion-item>
-            <ion-icon name="tablet-portrait" item-start></ion-icon>
-            <ion-input type="mobile" placeholder="用户名（手机号）"
-                       maxlength="11" onautocomplete="return false"></ion-input>
-          </ion-item>
+    <div class="login_bg"></div>
+    <div class="login_content" padding>
+        <form #loginForm="ngForm">
+            <ion-row>
+                <ion-col>
+                    <ion-list inset>
+                        <ion-item>
+                            <ion-icon name="person" item-start></ion-icon>
+                            <ion-input type="text" placeholder="用户名 / 手机号"
+                                       name="username" #username="ngModel" maxlength="11"
+                                       required [(ngModel)]="login.username"></ion-input>
+                        </ion-item>
+                        <!-- 密码 -->
+                        <ion-item class="login_pwd">
+                            <ion-icon name="key" item-start></ion-icon>
+                            <ion-input type="password" placeholder="密码"
+                                       name="password" #password="ngModel" maxlength="16"
+                                       required [(ngModel)]="login.password"></ion-input>
+                        </ion-item>
 
-          <ion-item class="bot_radius">
-            <ion-icon name="key" item-start></ion-icon>
-            <ion-input type="password" minlength="6" maxlength="16"
-                       placeholder="密码" onautocomplete="return false"></ion-input>
-          </ion-item>
+                        <ion-col text-right>
+                            <div (click)="return" class="forgot_pwd">忘记密码？</div>
+                        </ion-col>
 
-          <ion-col text-right>
-            <div (click)="return" class="forgot_pwd">忘记密码？</div>
-          </ion-col>
-          <ion-col text-center>
-            <button ion-button block color="light">确 定</button>
-          </ion-col>
+                        <ion-col text-center>
+                            <button ion-button block color="light" (click)="loginSubmit(login)"
+                                    [disabled]="!loginForm.form.valid">提 交
+                            </button>
+                        </ion-col>
 
-        </ion-list>
-      </ion-col>
-    </ion-row>
-
-  </div>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+        </form>
+    </div>
 </ion-content>
