@@ -15,14 +15,6 @@
 .swiper-pagination{
   display: none;
 }
-
-.home-slides img{
-  //height: 190px;
-  //width: 100%;
-}
-.news_wrap{
-  margin-bottom: 50px;
-}
 .ss_col{
   font-size: 18px;
   line-height: 30px;
@@ -67,4 +59,7 @@
 .date{
   float: right;
   margin-right: 8px;
+}
+ion-row .bottom_button{
+  margin-bottom: 50px;
 }

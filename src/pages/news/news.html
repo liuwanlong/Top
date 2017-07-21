@@ -21,7 +21,7 @@
   </ion-row>
 
 <!-- 新闻 -->
-  <div class="news_wrap">
+  <div>
     <ion-row *ngFor="let slide of news" (click)="goDetail(slide)">
       <ion-col col-4>
         <div class="news_left">
@@ -43,5 +43,13 @@
       </ion-col>
     </ion-row>
   </div>
+  <ion-row>
+    <ion-col col-12 text-center>
+      <button ion-button color="danger" block="" class="bottom_button" (click)="loading(page)">
+        点击加载更多
+      </button>
+    </ion-col>
+  </ion-row>
+
 </ion-content>
 

@@ -1,9 +1,11 @@
+///<reference path="../search/search.ts"/>
 import {Component, OnInit} from '@angular/core';
 import { NavController} from 'ionic-angular';
 import { Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import {NewsService} from "../../app/news.service";
 import {DetailPage} from "../detail/detail";
+import {SearchPage} from "../search/search";
 
 @Component({
   selector: 'page-about',
@@ -14,6 +16,7 @@ export class NewsPage implements OnInit{
   banner_slides: any;
   allnews: {}[];
   news: {}[];
+  page = 1;
   ngOnInit(): void {
     this.getData();
   }
@@ -23,7 +26,7 @@ export class NewsPage implements OnInit{
 
     }
     getData(){
-      return this.http.get('http://localhost:3000/users')
+      return this.http.get('http://localhost:3000/users/')
         .toPromise()
         .then(res => {
           var data = res.json().data;
@@ -39,4 +42,11 @@ export class NewsPage implements OnInit{
   goDetail(slide){
     this.navCtrl.push(DetailPage,slide);
   }
+   search(){
+      this.navCtrl.push(SearchPage);
+   }
+   // loading(page){
+   //  this.page++;
+   //
+   // }
 }

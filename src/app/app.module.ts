@@ -19,6 +19,7 @@ import {JsonpModule} from "@angular/http";
 import {NewsService} from "./news.service";
 import {DetailPage} from "../pages/detail/detail";
 import {ListPage} from "../pages/list/list";
+import {SearchPage} from "../pages/search/search";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {ListPage} from "../pages/list/list";
     LoginPage,
     AgreementPage,
     DetailPage,
-    ListPage
+    ListPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import {ListPage} from "../pages/list/list";
     LoginPage,
     AgreementPage,
     DetailPage,
-    ListPage
+    ListPage,
+    SearchPage
   ],
   providers: [
     StatusBar,
