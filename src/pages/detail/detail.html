@@ -6,30 +6,29 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>新闻详情</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>新闻详情</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h3 [innerHTML]="slide.title"></h3>
-  <span [innerHTML]="slide.source"></span><span [innerHTML]="slide.edit_time" class="article_date"></span>
-  <div [innerHTML]="slide.content" class="article_content"></div>
+    <h3 [innerHTML]="slide.title"></h3>
+    <span [innerHTML]="slide.source"></span><span [innerHTML]="slide.edit_time" class="article_date"></span>
+    <div [innerHTML]="slide.content" class="article_content"></div>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <p (click)="doPrompt()">发送评论</p>
-    <ion-buttons end>
-      <button ion-button icon-left color="royal">
-        <ion-icon name="text"></ion-icon>
-        12
-      </button>
-      <button ion-button icon-only color="royal">
-      <ion-icon name="star"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <p (click)="doPrompt(slide.news_id)">发送评论</p>
+        <ion-buttons end>
+            <button ion-button icon-left color="royal" (click)="goTopic(slide.news_id)">
+                <ion-icon name="text" [innerHTML]="slide.r_count"></ion-icon>
+            </button>
+            <button ion-button icon-only color="royal">
+                <ion-icon name="star"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-footer>

@@ -18,55 +18,66 @@ import {AgreementPage} from "../pages/agreement/agreement";
 import {NewsService} from "./news.service";
 import {DetailPage} from "../pages/detail/detail";
 import {ListPage} from "../pages/list/list";
-import { SimpleAlertProvider } from '../providers/simple-alert/simple-alert';
+import {TopicPage} from "../pages/topic/topic";
+import {TopicServiceProvider} from '../providers/topic-service/topic-service';
+import {SimpleAlertProvider} from '../providers/simple-alert/simple-alert';
 import {VideoDetailPage} from "../pages/video-detail/video-detail";
 import {SearchPage} from "../pages/search/search";
+import {GettimeProvider} from '../providers/gettime/gettime';
+import {TopicDetailPage} from "../pages/topic-detail/topic-detail";
 
 @NgModule({
-  declarations: [
-    MyApp,
-    NewsPage,
-    VideoPage,
-    HomePage,
-    TabsPage,
-    MinePage,
-    RegisterPage,
-    LoginPage,
-    AgreementPage,
-    DetailPage,
-    ListPage,
-    VideoDetailPage,
-    SearchPage
-  ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp,{
-      tabsHideOnSubPages: 'true'
-    }),
-    HttpModule,
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    NewsPage,
-    VideoPage,
-    HomePage,
-    TabsPage,
-    MinePage,
-    RegisterPage,
-    LoginPage,
-    AgreementPage,
-    DetailPage,
-    ListPage,
-    VideoDetailPage,
-    SearchPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    NewsService,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SimpleAlertProvider
-  ]
+    declarations: [
+        MyApp,
+        NewsPage,
+        VideoPage,
+        HomePage,
+        TabsPage,
+        MinePage,
+        RegisterPage,
+        LoginPage,
+        AgreementPage,
+        DetailPage,
+        ListPage,
+        VideoDetailPage,
+        TopicPage,
+        SearchPage,
+        TopicDetailPage
+    ],
+    imports: [
+        BrowserModule,
+        IonicModule.forRoot(MyApp, {
+            tabsHideOnSubPages: 'true'
+        }),
+        HttpModule,
+    ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        NewsPage,
+        VideoPage,
+        HomePage,
+        TabsPage,
+        MinePage,
+        RegisterPage,
+        LoginPage,
+        AgreementPage,
+        DetailPage,
+        ListPage,
+        VideoDetailPage,
+        SearchPage,
+        TopicPage,
+        TopicDetailPage
+    ],
+    providers: [
+        StatusBar,
+        SplashScreen,
+        NewsService,
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        SimpleAlertProvider,
+        TopicServiceProvider,
+        GettimeProvider
+    ]
 })
-export class AppModule {}
+export class AppModule {
+}
