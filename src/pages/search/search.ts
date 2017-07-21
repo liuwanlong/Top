@@ -23,16 +23,17 @@ export class SearchPage implements OnInit{
   constructor(public navCtrl: NavController, public http: Http) {
 
   }
-  getdata(event){
-    return this.http.get('http://localhost:3000/users/'+ event)
+    ionViewWillLoad() {
+      this.getdata('');
+    }
+
+  getdata(val?:string){
+    return this.http.get('http://localhost:3000/users/'+ val)
       .toPromise()
       .then(res => {
         var data = res.json().data;
-        console.log(data);
-        if(data == ''){
-          this.flag = !this.flag;
-        }
-        this.items = data;
+        this.flag = (data.length == 0)? true : false;
+          this.items = data;
       }).catch(this.handleError)
   }
   handleError(error) {

@@ -10,7 +10,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="fanbaobao">
   <ion-row style="height: 200px">
     <ion-slides class="home-slides">
       <ion-slide class="slide my-banner" *ngFor="let slide of banner_slides" (click)="goDetail(slide)">
@@ -43,13 +43,28 @@
       </ion-col>
     </ion-row>
   </div>
-  <ion-row>
+    <ion-refresher pulling-text="下拉刷新" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+  <ion-row *ngIf="!isHasMore">
     <ion-col col-12 text-center>
-      <button ion-button color="danger" block="" class="bottom_button" (click)="loading(page)">
+      <button ion-button color="transparent" block class="bottom_button">
         点击加载更多
       </button>
     </ion-col>
   </ion-row>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading ...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>
 
