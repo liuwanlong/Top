@@ -25,12 +25,35 @@
   <ion-row class="navs">
     <ion-col>
       <ion-list inset>
-        <button ion-item *ngFor="let item of items" (click)="go(item.nav)">
-          <ion-icon name="{{item.icon}}" item-start></ion-icon>
-          {{ item.name }}
+        <button ion-item>
+          <ion-icon name="star" item-start></ion-icon>
+          我的收藏
+        </button>
+        <button ion-item>
+          <ion-icon name="text" item-start></ion-icon>
+          消息通知
+        </button>
+        <button ion-item>
+          <ion-icon name="settings" item-start></ion-icon>
+          设置
+        </button>
+        <button ion-item *ngIf="currentUser" (click)="toLogout()">
+          <ion-icon name="backspace" item-start></ion-icon>
+          退出登录
         </button>
       </ion-list>
     </ion-col>
   </ion-row>
+
+  <!--<ion-row class="navs">-->
+    <!--<ion-col>-->
+      <!--<ion-list inset>-->
+        <!--<button ion-item *ngFor="let item of items" (click)="go(item.nav)">-->
+          <!--<ion-icon name="{{item.icon}}" item-start></ion-icon>-->
+          <!--{{ item.name }}-->
+        <!--</button>-->
+      <!--</ion-list>-->
+    <!--</ion-col>-->
+  <!--</ion-row>-->
 </ion-content>
 

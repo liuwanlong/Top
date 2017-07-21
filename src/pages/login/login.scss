@@ -27,6 +27,13 @@ page-login {
 .forgot_pwd {
   color: #fff;
 }
+.alert-wrapper{
+  max-height: inherit !important;
+}
+
+.to_center .alert-wrapper{
+
+}
 
 /* 清除默认的margin-bottom */
 .scroll-content{
