@@ -3,6 +3,7 @@ import { NavController} from 'ionic-angular';
 import { Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
 import {DetailPage} from "../detail/detail";
+import {SearchPage} from "../search/search";
 
 @Component({
   selector: 'page-about',
@@ -36,5 +37,8 @@ export class NewsPage implements OnInit{
     }
   goDetail(slide){
     this.navCtrl.push(DetailPage,slide);
+  }
+  search(){
+    this.navCtrl.push(SearchPage);
   }
 }

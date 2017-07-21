@@ -19,6 +19,7 @@ import {DomSanitizer} from "@angular/platform-browser";
     videoUrl:any;
     news = [];
     newsArr = [];
+    videoArr = [];
     constructor(
       public navCtrl: NavController,
       public navParams: NavParams,
@@ -26,6 +27,7 @@ import {DomSanitizer} from "@angular/platform-browser";
   ) {
     this.news = navParams.data[0];
     this.newsArr = navParams.data[1];
+    this.videoArr = this.newsArr.slice(1,6);
     this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(navParams.data[0].url);
   }
 

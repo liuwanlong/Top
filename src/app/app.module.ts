@@ -20,6 +20,7 @@ import {DetailPage} from "../pages/detail/detail";
 import {ListPage} from "../pages/list/list";
 import { SimpleAlertProvider } from '../providers/simple-alert/simple-alert';
 import {VideoDetailPage} from "../pages/video-detail/video-detail";
+import {SearchPage} from "../pages/search/search";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {VideoDetailPage} from "../pages/video-detail/video-detail";
     DetailPage,
     ListPage,
     VideoDetailPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,8 @@ import {VideoDetailPage} from "../pages/video-detail/video-detail";
     AgreementPage,
     DetailPage,
     ListPage,
-    VideoDetailPage
+    VideoDetailPage,
+    SearchPage
   ],
   providers: [
     StatusBar,

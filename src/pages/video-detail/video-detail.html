@@ -41,10 +41,10 @@
     </ion-card-content>
   </ion-card>
   <h2>更多美拍</h2>
-  <ion-item *ngFor="let news of newsArr">
+  <ion-item *ngFor="let news of videoArr">
     <ion-card>
       <ion-card-content>
-        <a (click)="videoDetailPage(news,newsArr)">
+        <a (click)="videoDetailPage(news,videoArr)">
           <img src="{{news.cover_pic}}" alt="">
         </a>
         <br>

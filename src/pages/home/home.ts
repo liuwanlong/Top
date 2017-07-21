@@ -4,6 +4,7 @@ import "rxjs/add/operator/map";
 import {NewsService} from "../../app/news.service";
 import {DetailPage} from "../detail/detail";
 import {ListPage} from "../list/list";
+import {SearchPage} from "../search/search";
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -44,4 +45,8 @@ export class HomePage implements OnInit {
   goList(type){
     this.navCtrl.push(ListPage,type);
   }
+  search(){
+    this.navCtrl.push(SearchPage);
+  }
+
 }

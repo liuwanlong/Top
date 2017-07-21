@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {AlertController} from "ionic-angular";
 
@@ -11,7 +12,7 @@ import {AlertController} from "ionic-angular";
 @Injectable()
 export class SimpleAlertProvider {
 
-  constructor(private alertCtrl: AlertController) {
+  constructor( private alertCtrl: AlertController) {
   }
 
   // 弹窗

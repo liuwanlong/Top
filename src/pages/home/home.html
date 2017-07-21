@@ -1,7 +1,10 @@
 <ion-header class="home-header">
   <ion-navbar>
     <ion-row>
-      <ion-col col-4 class="city"><span>北京市</span><span class="tri-down">▲</span></ion-col>
+      <ion-col col-4 class="city">
+        <span>北京市</span>
+        <ion-icon name="arrow-down"class="ion-ios-arrow-down"></ion-icon>
+      </ion-col>
       <ion-col col-4 text-center><img class="logo" src="/assets/images/logo.png"></ion-col>
       <ion-col col-4 text-end>
         <ion-icon name="search" class="icon-search" (click)="search()"></ion-icon>
