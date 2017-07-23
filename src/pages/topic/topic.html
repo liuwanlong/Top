@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>评论详情</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            热门评论
+        </ion-card-header>
+        <ion-list>
+            <ion-item *ngFor="let topic of topics">
+                <ion-avatar item-start>
+                    <img src="">
+                </ion-avatar>
+                <h2><span [innerHTML]="topic.t_from"></span>:</h2>
+                <p [innerHTML]="topic.t_time"></p>
+                <ion-card-content>
+                    <p [innerHTML]="topic.t_con"></p>
+                </ion-card-content>
+                <p>
+                    <button *ngIf="topic.rp_count!=0" ion-button color="dark" clear (click)="goTopicDetail(topic)">
+                        展开评论
+                    </button>
+                    <button ion-button icon-left clear small (click)="vote(topic,1)">
+                        <ion-icon name="thumbs-up"></ion-icon>
+                        <div [innerHTML]="topic.vote_up"></div>
+                    </button>
+                    <button ion-button icon-left clear small (click)="vote(topic,0)">
+                        <ion-icon name="thumbs-down"></ion-icon>
+                        <div [innerHTML]="topic.vote_down"></div>
+                    </button>
+                    <button ion-button color="回复" clear (click)="doPrompt(topic)">
+                        回复
+                    </button>
+                </p>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>
