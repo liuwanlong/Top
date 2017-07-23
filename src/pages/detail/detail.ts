@@ -19,7 +19,7 @@ import {Http} from "@angular/http";
 })
 export class DetailPage {
     slide: any;
-    user: User
+    user: User;
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,

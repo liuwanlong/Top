@@ -58,8 +58,12 @@ export class TopicDetailPage {
                             t_to: t.t_from,
                             t_to_t: t.t_id,
                             news_id: t.news_id,
-                            t_time: this.gt.getNowFormatDate()
+                            t_time: this.gt.getNowFormatDate(),
+                            vote_up: 0,
+                            vote_down: 0,
+                            rp_count: 0
                         };
+                        this.topic = topic;
                         this.ts.sendTopic(topic, t.t_id);
                         this.topics.push(topic);
                     }

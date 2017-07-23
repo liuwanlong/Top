@@ -23,10 +23,10 @@
     <ion-toolbar>
         <p (click)="doPrompt(slide.news_id)">发送评论</p>
         <ion-buttons end>
-            <button ion-button icon-left color="royal" (click)="goTopic(slide.news_id)">
-                <ion-icon name="text" [innerHTML]="slide.r_count"></ion-icon>
+            <button ion-button icon-left (click)="goTopic(slide.news_id)">
+                <ion-icon name="text"></ion-icon>
             </button>
-            <button ion-button icon-only color="royal">
+            <button ion-button icon-only class="size-12">
                 <ion-icon name="star"></ion-icon>
             </button>
         </ion-buttons>

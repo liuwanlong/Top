@@ -7,31 +7,31 @@
 <ion-content padding>
     <ion-card>
         <ion-card-header>
-            热门评论
+            全部评论
         </ion-card-header>
         <ion-list>
-            <ion-item *ngFor="let topic of topics">
+            <ion-item *ngFor="let topic of topics" class="topic-box">
                 <ion-avatar item-start>
-                    <img src="">
+                    <img src="assets/images/icon_account.png">
                 </ion-avatar>
                 <h2><span [innerHTML]="topic.t_from"></span>:</h2>
-                <p [innerHTML]="topic.t_time"></p>
+                <p [innerHTML]="topic.t_time" class="topic-time"></p>
                 <ion-card-content>
                     <p [innerHTML]="topic.t_con"></p>
                 </ion-card-content>
                 <p>
-                    <button *ngIf="topic.rp_count!=0" ion-button color="dark" clear (click)="goTopicDetail(topic)">
+                    <span *ngIf="topic.rp_count!=0" ion-button color="dark" clear (click)="goTopicDetail(topic)">
                         展开评论
-                    </button>
-                    <button ion-button icon-left clear small (click)="vote(topic,1)">
-                        <ion-icon name="thumbs-up"></ion-icon>
+                    </span>
+                    <button ion-button icon-left clear small  (click)="vote(topic,1)" class="color-green">
+                        <ion-icon name="thumbs-up" class="color-green"></ion-icon>
                         <div [innerHTML]="topic.vote_up"></div>
                     </button>
-                    <button ion-button icon-left clear small (click)="vote(topic,0)">
+                    <button ion-button icon-left clear small (click)="vote(topic,0)" class="color-dark">
                         <ion-icon name="thumbs-down"></ion-icon>
                         <div [innerHTML]="topic.vote_down"></div>
                     </button>
-                    <button ion-button color="回复" clear (click)="doPrompt(topic)">
+                    <button ion-button clear (click)="doPrompt(topic)" class="color-rp font-12">
                         回复
                     </button>
                 </p>

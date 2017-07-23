@@ -1,48 +1,48 @@
 <ion-header>
-  <ion-navbar>
-    <ion-row>
-      <ion-col col-4></ion-col>
-      <ion-col col-4 text-center class="ss_col">时事</ion-col>
-      <ion-col col-4>
-        <ion-icon name="search" class="icon-search" (click)="search()"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-row>
+            <ion-col col-4></ion-col>
+            <ion-col col-4 text-center class="ss_col">时事</ion-col>
+            <ion-col col-4>
+                <ion-icon name="search" class="icon-search" (click)="search()"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-navbar>
 </ion-header>
 
 <ion-content class="fanbaobao">
-  <ion-row style="height: 200px">
-    <ion-slides class="home-slides">
-      <ion-slide class="slide my-banner" *ngFor="let slide of banner_slides" (click)="goDetail(slide)">
-        <img [src]="slide.top_image" class="slide-img">
-        <h6 [innerHTML]="slide.title" class="slide-title"></h6>
-      </ion-slide>
-    </ion-slides>
-  </ion-row>
+    <ion-row style="height: 200px">
+        <ion-slides class="home-slides">
+            <ion-slide class="slide my-banner" *ngFor="let slide of banner_slides" (click)="goDetail(slide)">
+                <img [src]="slide.top_image" class="slide-img">
+                <h6 [innerHTML]="slide.title" class="slide-title"></h6>
+            </ion-slide>
+        </ion-slides>
+    </ion-row>
 
-<!-- 新闻 -->
-  <div>
-    <ion-row *ngFor="let slide of news" (click)="goDetail(slide)">
-      <ion-col col-4>
-        <div class="news_left">
-          <img src="{{slide.top_image}}" class="news_img">
-        </div>
-      </ion-col>
-      <ion-col>
-        <h3 class="news_title">{{slide.title}}</h3>
-        <p class="news_body">{{slide.digest}}</p>
-        <p class="news_icon">
+    <!-- 新闻 -->
+    <div>
+        <ion-row *ngFor="let slide of news" (click)="goDetail(slide)">
+            <ion-col col-4>
+                <div class="news_left">
+                    <img src="{{slide.top_image}}" class="news_img">
+                </div>
+            </ion-col>
+            <ion-col>
+                <h3 class="news_title">{{slide.title}}</h3>
+                <p class="news_body">{{slide.digest}}</p>
+                <p class="news_icon">
             <span>
               <ion-icon color="primary" name="chatboxes"></ion-icon>
             </span>{{slide.r_count}}
-          <span class="eye">
+                    <span class="eye">
               <ion-icon color="primary" name="eye"></ion-icon>
             </span>{{slide.v_count}}
-          <span class="date">{{slide.edit_time}}</span>
-        </p>
-      </ion-col>
-    </ion-row>
-  </div>
+                    <span class="date">{{slide.edit_time}}</span>
+                </p>
+            </ion-col>
+        </ion-row>
+    </div>
     <ion-refresher pulling-text="下拉刷新" (ionRefresh)="doRefresh($event)">
         <ion-refresher-content
                 pullingIcon="arrow-dropdown"
@@ -52,19 +52,19 @@
         </ion-refresher-content>
     </ion-refresher>
 
-  <ion-row *ngIf="!isHasMore">
-    <ion-col col-12 text-center>
-      <button ion-button color="transparent" block class="bottom_button">
-        点击加载更多
-      </button>
-    </ion-col>
-  </ion-row>
-  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
-    <ion-infinite-scroll-content
-            loadingSpinner="bubbles"
-            loadingText="Loading ...">
-    </ion-infinite-scroll-content>
-  </ion-infinite-scroll>
+    <ion-row *ngIf="!isHasMore">
+        <ion-col col-12 text-center>
+            <button ion-button color="transparent" block class="bottom_button">
+                点击加载更多
+            </button>
+        </ion-col>
+    </ion-row>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content
+                loadingSpinner="bubbles"
+                loadingText="Loading ...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
 </ion-content>
 

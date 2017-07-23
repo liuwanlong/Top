@@ -19,14 +19,14 @@ export class HomePage implements OnInit {
   }
 
   cates = [
-    {icon: 'thumbs-up', name: '推荐',type:1},
+    {icon: 'thumbs-up', name: '头条',type:1},
     {icon: 'bulb', name: '热点',type:1},
-    {icon: 'pin', name: '本地',type:1},
-    {icon: 'book', name: '社会',type:1},
     {icon: 'musical-notes', name: '娱乐',type:2},
-    {icon: 'jet', name: '科技',type:8},
+    {icon: 'pin', name: '军事',type:3},
+    {icon: 'globe', name: '汽车',type:4},
+    {icon: 'book', name: '财经',type:5},
     {icon: 'basketball', name: '体育',type:7},
-    {icon: 'globe', name: '频道',type:1},
+    {icon: 'jet', name: '科技',type:8}
   ];
 
   constructor(public navCtrl: NavController, private ns: NewsService) {
