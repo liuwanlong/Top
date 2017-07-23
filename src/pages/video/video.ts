@@ -24,6 +24,7 @@ export class VideoPage implements OnInit{
   }
 
   getData(){
+    this.number += 5;
     return this. http.get('http://localhost:3000/video/'+ this.number)
         .toPromise()
         .then(res=>{
@@ -51,7 +52,7 @@ export class VideoPage implements OnInit{
   }
   doInfinite(infiniteScroll) {
       this.number += 5;
-      console.log(this.number);
+      // console.log(this.number);
     setTimeout(() => {
       if(this.number == 35){
         infiniteScroll.complete();

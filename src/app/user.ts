@@ -3,14 +3,13 @@ export class User{
     username: string;
     password: string;
     email: string;
-    secPwd: string;      // 用于验证，数据库中没有该字段
+    // secPwd: string;      // 用于验证，数据库中没有该字段
 
     constructor(mobile?: string, username?: string,
-                password?: string, email?: string, secPwd?: string) {
+                password?: string, email?: string) {
         this.mobile = mobile;
         this.username = username;
         this.password = password;
         this.email = email;
-        this.secPwd = secPwd;
     }
 }

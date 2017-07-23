@@ -44,9 +44,8 @@ export class DetailPage {
         this.navCtrl.push(TopicPage, id);
     }
 
-    ionViewDidLoad() {
-        //当页面加载的时候
-        // console.log('ionViewDidLoad DetailPage');
+    ionViewWillEnter(){
+        this.user = localStorage.currentUser? JSON.parse(localStorage.currentUser): null;
     }
 
     doPrompt(news_id) {
@@ -94,6 +93,22 @@ export class DetailPage {
             ]
         });
         prompt.present();
+    }
+
+    collect(news_id:string){
+        if (!this.user.mobile){
+            this.sa.showAlert('提示','您还没有登录！请登录后重试',['确定']);
+            return false;
+        }
+        let news = {
+            mobile: this.user.mobile,
+            news_id: news_id
+        }
+        this.http.post('http://localhost:3000/users/news', news)
+            .toPromise().then(result => {
+                console.log('ok')
+        });
+
     }
 
 }
