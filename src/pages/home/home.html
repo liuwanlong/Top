@@ -1,11 +1,10 @@
 <ion-header class="home-header">
   <ion-navbar>
     <ion-row>
-      <ion-col col-4 class="city">
-        <span>北京市</span>
-        <ion-icon name="arrow-down"class="ion-ios-arrow-down"></ion-icon>
+      <ion-col col-4></ion-col>
+      <ion-col col-4 text-center>
+        <img class="logo" src="/assets/images/logo.png">
       </ion-col>
-      <ion-col col-4 text-center><img class="logo" src="/assets/images/logo.png"></ion-col>
       <ion-col col-4 text-end>
         <ion-icon name="search" class="icon-search" (click)="search()"></ion-icon>
       </ion-col>
@@ -33,8 +32,7 @@
   </ion-row>
   <!-- 新闻栏 -->
   <ion-row class="lists-top-title">
-    <ion-col col-6 text-start>头条事件</ion-col>
-    <ion-col col-6 text-end>囧事推荐</ion-col>
+    <ion-col text-start>头条事件</ion-col>
   </ion-row>
   <!-- 新闻列表 -->
   <div class="news_wrap">

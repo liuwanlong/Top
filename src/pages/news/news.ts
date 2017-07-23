@@ -21,7 +21,7 @@ export class NewsPage implements OnInit {
         this.getData();
     }
 
-    constructor(public navCtrl: NavController, public http: Http, private ns: NewsService) {
+    constructor(public navCtrl: NavController, public http: Http) {
         this.isHasMore = true;
     }
 

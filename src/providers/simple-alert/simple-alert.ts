@@ -16,7 +16,7 @@ export class SimpleAlertProvider {
             buttons: buttons
         });
         return alert.present();
-    }
+     }
 
     showPrompt(title, message, cssClass, [inp1, ph1], [inp2, ph2],
                [btntxt1, btncb1], [btntxt2, btncb2]) {
