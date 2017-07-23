@@ -1,7 +1,15 @@
-
-.title_des{
-  white-space:pre-wrap
-}
-.likes_count{
-  color:red;
+page-contact {
+  .title_des{
+    white-space: pre-wrap;
+  }
+  .likes_count{
+    color: red;
+  }
+  .list-ios .item-block .item-inner {
+    border-bottom: none;
+  }
+  .list-ios > .item-block:first-child,
+  .list-ios > .item-block:last-child{
+    border: none;
+  }
 }
