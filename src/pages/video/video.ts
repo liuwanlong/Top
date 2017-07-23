@@ -12,6 +12,8 @@ export class VideoPage implements OnInit{
 
   newsArr = [];
   number = 5;
+  isHasMore:boolean;
+
   constructor(
     public navCtrl: NavController,
     public http:Http,
@@ -23,18 +25,16 @@ export class VideoPage implements OnInit{
 
   getData(){
     this.number += 5;
-    console.log(this.number);
     return this. http.get('http://localhost:3000/video/'+ this.number)
         .toPromise()
         .then(res=>{
 
           this.newsArr = res.json();
-          console.log(this.newsArr)
+          // console.log(this.newsArr)
         })
   }
 
   videoDetailPage(news:object,newsArr?:object){
-    console.log(newsArr);
     var data = [news,newsArr];
     this.navCtrl.push(VideoDetailPage,data);
   }
@@ -51,8 +51,14 @@ export class VideoPage implements OnInit{
 
   }
   doInfinite(infiniteScroll) {
-    console.log('Begin async operation');
     setTimeout(() => {
+      console.log(this.number);
+      if(this.number == 35){
+        infiniteScroll.complete();
+        this.isHasMore = true;
+        return;
+      }
+
       this.getData();
       console.log('Async operation has ended');
       infiniteScroll.complete();

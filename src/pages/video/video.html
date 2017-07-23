@@ -29,7 +29,14 @@
             refreshingText="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
-
+  <!--//加载完毕-->
+  <ion-row *ngIf="isHasMore">
+    <ion-col col-12 text-center>
+      <button ion-button color="transparent" block class="bottom_button">
+        加载完毕。。。
+      </button>
+    </ion-col>
+  </ion-row>
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles">
     </ion-infinite-scroll-content>

@@ -48,5 +48,12 @@ export class HomePage implements OnInit {
   search(){
     this.navCtrl.push(SearchPage);
   }
+  doRefresh(refresher) {
+      this.getData(1);
+      setTimeout(() => {
+          console.log('Async operation has ended');
+          refresher.complete();
+      }, 2000);
+  }
 
 }

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {Http} from "@angular/http";
 import 'rxjs/add/operator/toPromise';
-import {NewsService} from "../../app/news.service";
 import {DetailPage} from "../detail/detail";
 import {SearchPage} from "../search/search";
 

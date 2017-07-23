@@ -36,5 +36,12 @@ export class ListPage implements OnInit {
       this.list_slides = data;
     })
   }
+    doRefresh(refresher) {
+        this.getListNews();
+        setTimeout(() => {
+            console.log('Async operation has ended');
+            refresher.complete();
+        }, 2000);
+    }
 
 }
