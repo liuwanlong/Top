@@ -29,7 +29,15 @@ export class DetailPage {
                 public http: Http) {
         this.user = new User();
         this.slide = navParams.data;
-        // console.log(localStorage.currentUser);
+        this.slide.v_count += 1;
+        http.post('http://localhost:3000/view', {id: this.slide.news_id})
+            .toPromise().then(res => {
+            if (res.json().success) {
+                console.log('v_count++成功');
+            } else {
+                console.log('v_count++失败');
+            }
+        })
     }
 
     goTopic(id) {
@@ -75,6 +83,7 @@ export class DetailPage {
                         this.http.post('http://localhost:3000/topic', topic)
                             .toPromise().then(res => {
                             if (res.json().success) {
+                                this.slide.r_count += 1;
                                 this.sa.showAlert('', '评论成功!', ['确定']);
                             } else {
                                 this.sa.showAlert('', '评论失败!', ['确定']);
