@@ -42,7 +42,7 @@ export class HomePage implements OnInit {
   goDetail(slide){
     this.navCtrl.push(DetailPage,slide);
   }
-  goList(type){
+  goList(type,){
     this.navCtrl.push(ListPage,type);
   }
   search(){
