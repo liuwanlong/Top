@@ -60,7 +60,6 @@ export class GetCollectionProvider {
                 return false;
             }
         });
-
     }
 
 }
