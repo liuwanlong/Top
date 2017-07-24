@@ -50,8 +50,8 @@ export class DetailPage {
 
     doPrompt(news_id) {
         this.user = JSON.parse(localStorage.currentUser);
-        if (!this.user.username) {
-            this.sa.showAlert('', '还没登录,不能发表评论哦!', ['确定']);
+        if (!this.user) {
+            return this.sa.showAlert('', '还没登录,不能发表评论哦!', ['确定']);
         }
         let prompt = this.alertCtrl.create({
             title: '评论',
