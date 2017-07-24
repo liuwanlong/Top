@@ -13,6 +13,7 @@ import {GettimeProvider} from "../../providers/gettime/gettime";
 export class TopicDetailPage {
     topic: any;
     topics: any;
+    reply: any;
     user: User;
 
     constructor(public navCtrl: NavController,
@@ -74,11 +75,11 @@ export class TopicDetailPage {
     }
 
     vote(topic, type) {
-        this.topic = topic;
+        this.reply = topic;
         if (type) {
-            this.topic.vote_up++;
+            this.reply.vote_up++;
         } else {
-            this.topic.vote_down++;
+            this.reply.vote_down++;
         }
         this.ts.doVote(topic.t_id, type).then(data => {
             console.log(data);

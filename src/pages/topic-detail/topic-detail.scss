@@ -17,4 +17,11 @@ page-topic-detail {
   .color-dark{
     color: #ccc;
   }
+  .topic-card,.reply-card{
+    width: 100%;
+    margin: 0;
+  }
+  .topic-card-btns,.reply-card-btns{
+    text-align: right;
+  }
 }

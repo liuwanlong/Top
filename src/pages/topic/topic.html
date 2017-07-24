@@ -4,9 +4,10 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <ion-card>
+<ion-content>
+    <ion-card class="topic-card">
         <ion-card-header>
+            <ion-icon name=""></ion-icon>
             全部评论
         </ion-card-header>
         <ion-list>
@@ -19,7 +20,7 @@
                 <ion-card-content>
                     <p [innerHTML]="topic.t_con"></p>
                 </ion-card-content>
-                <p>
+                <p class="topic-card-btns">
                     <span *ngIf="topic.rp_count!=0" ion-button color="dark" clear (click)="goTopicDetail(topic)">
                         展开评论
                     </span>

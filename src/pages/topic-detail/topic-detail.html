@@ -8,7 +8,7 @@
 
 
 <ion-content>
-    <ion-card>
+    <ion-card class="topic-card">
         <ion-item>
             <ion-avatar item-start>
                 <img src="assets/images/icon_account.png">
@@ -19,7 +19,7 @@
         <ion-card-content>
             <p [innerHTML]="topic.t_con"></p>
         </ion-card-content>
-        <p>
+        <p class="topic-card-btns">
             <button ion-button icon-left clear small (click)="vote(topic,1)" class="color-green">
                 <ion-icon name="thumbs-up"></ion-icon>
                 <div [innerHTML]="topic.vote_up"></div>
@@ -35,7 +35,7 @@
     </ion-card>
     <ion-list>
         <ion-item *ngFor="let topic of topics">
-            <ion-card>
+            <ion-card class="reply-card">
                 <ion-item>
                     <ion-avatar item-start>
                         <img src="assets/images/icon_account.png">
@@ -46,7 +46,7 @@
                 <ion-card-content>
                     <p [innerHTML]="topic.t_con"></p>
                 </ion-card-content>
-                <p>
+                <p class="reply-card-btns">
                     <button ion-button icon-left clear small (click)="vote(topic,1)" class="color-green">
                         <ion-icon name="thumbs-up"></ion-icon>
                         <div [innerHTML]="topic.vote_up"></div>
