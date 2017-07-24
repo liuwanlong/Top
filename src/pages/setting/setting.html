@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>设置</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list  no-lines>
+    <button ion-item>个人信息管理</button>
+    <button ion-item>账号管理</button>
+  </ion-list>
+
+  <ion-list no-margin>
+    <button ion-item (click)="presentToast()">
+      检测更新
+      <div class="tt_version" float-right>v2.7.1</div>
+    </button>
+    <button ion-item>版权信息</button>
+    <button ion-item>版本说明</button>
+  </ion-list>
+</ion-content>

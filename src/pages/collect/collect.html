@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-list text-center>
+    <ion-list text-center no-lines>
         <ion-item-sliding *ngFor="let slide of news">
 
             <ion-item (click)="goDetail(slide)">
@@ -33,8 +33,8 @@
                 </ion-row>
             </ion-item>
 
-            <ion-item-options side="right" (click)="delItem(slide.news_id)">
-                <button ion-button color="danger">
+            <ion-item-options side="right">
+                <button ion-button color="danger" (click)="delItem(slide.news_id)">
                     <ion-icon name="trash" item-start></ion-icon>
                     删除
                 </button>

@@ -25,8 +25,9 @@ import {VideoDetailPage} from "../pages/video-detail/video-detail";
 import {SearchPage} from "../pages/search/search";
 import {GettimeProvider} from '../providers/gettime/gettime';
 import {TopicDetailPage} from "../pages/topic-detail/topic-detail";
-import { GetCollectionProvider } from '../providers/get-collection/get-collection';
+import {GetCollectionProvider} from '../providers/get-collection/get-collection';
 import {CollectPage} from "../pages/collect/collect";
+import {SettingPage} from "../pages/setting/setting";
 
 @NgModule({
     declarations: [
@@ -45,7 +46,8 @@ import {CollectPage} from "../pages/collect/collect";
         TopicPage,
         SearchPage,
         TopicDetailPage,
-        CollectPage
+        CollectPage,
+        SettingPage
     ],
     imports: [
         BrowserModule,
@@ -71,7 +73,8 @@ import {CollectPage} from "../pages/collect/collect";
         SearchPage,
         TopicPage,
         TopicDetailPage,
-        CollectPage
+        CollectPage,
+        SettingPage
     ],
     providers: [
         StatusBar,
@@ -81,7 +84,7 @@ import {CollectPage} from "../pages/collect/collect";
         SimpleAlertProvider,
         TopicServiceProvider,
         GettimeProvider,
-    GetCollectionProvider
+        GetCollectionProvider
     ]
 })
 export class AppModule {

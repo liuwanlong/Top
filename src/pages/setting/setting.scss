@@ -1,0 +1,31 @@
+page-setting {
+  ion-content, .content-ios {
+    background-color: #fafafa;
+  }
+
+  .item-inner .label {
+    font-size: 16px;
+  }
+
+  .list-ios{
+    margin: 20px 0;
+  }
+
+  .list-ios > .item-block:first-child{
+    border-top: 0.55px solid #f0f0f0;
+  }
+
+  .list-ios > .item-block:first-child,
+  .list-ios > .item-block:last-child{
+    border-bottom: 0.55px solid #f0f0f0;
+  }
+
+  .list-ios .item-block .item-inner{
+    border-bottom: 0.55px solid #f0f0f0;
+
+  }
+  .tt_version{
+    color: #333;
+  }
+
+}

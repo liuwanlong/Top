@@ -5,6 +5,7 @@ import {LoginPage} from "../login/login";
 import {User} from "../../app/user";
 import {SimpleAlertProvider} from "../../providers/simple-alert/simple-alert";
 import {CollectPage} from "../collect/collect";
+import {SettingPage} from "../setting/setting";
 
 @Component({
     selector: 'page-mine',
@@ -43,6 +44,10 @@ export class MinePage {
 
     toLoginPage(param?: Object) {
         this.navCtrl.push(LoginPage, param);
+    }
+
+    toSetting(){
+        this.navCtrl.push(SettingPage);
     }
 
     doPrompt() {
