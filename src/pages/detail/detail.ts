@@ -49,9 +49,11 @@ export class DetailPage {
 
     ionViewWillEnter() {
         this.user = localStorage.currentUser ? JSON.parse(localStorage.currentUser) : null;
-        this.gc.isHasCollection(this.user.mobile, this.slide.news_id).then(data => {
-            this.isColl = data;
-        });
+        if(this.user){
+            this.gc.isHasCollection(this.user.mobile, this.slide.news_id).then(data => {
+                this.isColl = data;
+            });
+        }
     }
 
     doPrompt(news_id) {
