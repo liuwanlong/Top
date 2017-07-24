@@ -25,6 +25,7 @@ import {VideoDetailPage} from "../pages/video-detail/video-detail";
 import {SearchPage} from "../pages/search/search";
 import {GettimeProvider} from '../providers/gettime/gettime';
 import {TopicDetailPage} from "../pages/topic-detail/topic-detail";
+import {CollectPage} from "../pages/collect/collect";
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import {TopicDetailPage} from "../pages/topic-detail/topic-detail";
         VideoDetailPage,
         TopicPage,
         SearchPage,
-        TopicDetailPage
+        TopicDetailPage,
+        CollectPage
     ],
     imports: [
         BrowserModule,
@@ -67,7 +69,8 @@ import {TopicDetailPage} from "../pages/topic-detail/topic-detail";
         VideoDetailPage,
         SearchPage,
         TopicPage,
-        TopicDetailPage
+        TopicDetailPage,
+        CollectPage
     ],
     providers: [
         StatusBar,

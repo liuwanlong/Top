@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的收藏</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <ion-row *ngFor="let slide of news" (click)="goDetail(slide)">
+      <ion-col col-4>
+        <div class="news_left">
+          <img src="{{slide.top_image}}" class="news_img">
+        </div>
+      </ion-col>
+      <ion-col>
+        <h3 class="news_title">{{slide.title}}</h3>
+        <p class="news_body">{{slide.digest}}</p>
+        <p class="news_icon">
+            <span>
+              <ion-icon color="primary" name="chatboxes"></ion-icon>
+            </span>{{slide.r_count}}
+          <span class="eye">
+              <ion-icon color="primary" name="eye"></ion-icon>
+            </span>{{slide.v_count}}
+          <span class="date">{{slide.edit_time}}</span>
+        </p>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>
