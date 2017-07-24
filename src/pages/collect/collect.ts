@@ -45,6 +45,4 @@ export class CollectPage {
         this.navCtrl.push(DetailPage, slide);
     }
 
-    ionViewDidLoad() {
-    }
 }

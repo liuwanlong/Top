@@ -1,6 +1,6 @@
-<ion-tabs>
+<ion-tabs class="tab-foot">
   <ion-tab [root]="tab1Root" tabTitle="首页" tabIcon="md-home"></ion-tab>
-  <ion-tab [root]="tab2Root" tabTitle="时事" tabIcon="md-planet"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="时事" tabIcon="md-planet" (ngDbclick)=doRefresh($event)></ion-tab>
   <ion-tab [root]="tab3Root" tabTitle="视频" tabIcon="md-play"></ion-tab>
   <ion-tab [root]="tab4Root" tabTitle="我的" tabIcon="md-person"></ion-tab>
 </ion-tabs>

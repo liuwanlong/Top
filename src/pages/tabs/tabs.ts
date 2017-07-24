@@ -15,7 +15,6 @@ export class TabsPage {
   tab3Root = VideoPage;
   tab4Root = MinePage;
 
-
   constructor() {
 
   }

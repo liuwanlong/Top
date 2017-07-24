@@ -29,6 +29,7 @@ export class VideoDetailPage {
         this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(navParams.data[0].url);
     }
 
+
     ionViewDidLoad() {
         console.log('ionViewDidLoad VideoDetailPage');
     }
