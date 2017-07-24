@@ -15,7 +15,9 @@ page-detail {
   ion-toolbar p{
     margin-left: 10px;
   }
-  .toolbar-title-ios{
-    color:#000000;
-  }
+
+}
+
+.toast-ios .toast-wrapper{
+  background: rgba(0,0,0,.7) !important;
 }

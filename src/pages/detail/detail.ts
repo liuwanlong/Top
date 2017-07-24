@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AlertController, NavController, NavParams} from 'ionic-angular';
+import {AlertController, NavController, NavParams, ToastController} from 'ionic-angular';
 import {TopicPage} from "../topic/topic";
 import {User} from "../../app/user";
 import {SimpleAlertProvider} from "../../providers/simple-alert/simple-alert";
@@ -29,6 +29,7 @@ export class DetailPage {
                 public sa: SimpleAlertProvider,
                 public gt: GettimeProvider,
                 public gc: GetCollectionProvider,
+                public toastCtrl: ToastController,
                 public http: Http) {
         this.user = new User();
         this.slide = navParams.data;
@@ -113,12 +114,23 @@ export class DetailPage {
                 this.isColl = data;
             })
         }else{                      // 取消收藏
-            return this.sa.showConfirm('提示','您已收藏改文章，是否取消该收藏？',['取消',()=>{}],['确定',()=>{
+            // return this.sa.showConfirm('提示','您已收藏改文章，是否取消该收藏？',['取消',()=>{}],['确定',()=>{
                 this.gc.delCollection(this.user.mobile, news_id).then(data=>{
                     this.isColl = !data;
+                    this.presentToast('已取消对该新闻的收藏',30000,'top');
                 })
-            }]);
+            // }]);
         }
+    }
+
+
+    presentToast(message,duration,positon) {
+        let toast = this.toastCtrl.create({
+            message: message,
+            duration: duration,
+            position: positon,
+        });
+        toast.present();
     }
 
 }
