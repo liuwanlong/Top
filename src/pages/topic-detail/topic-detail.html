@@ -34,19 +34,19 @@
         </p>
     </ion-card>
     <ion-list>
-        <ion-item *ngFor="let topic of topics">
+        <ion-item *ngFor="let topic of topics" class="reply-box">
             <ion-card class="reply-card">
-                <ion-item>
+                <ion-item class="bgc-reply">
                     <ion-avatar item-start>
                         <img src="assets/images/icon_account.png">
                     </ion-avatar>
                     <h2><span [innerHTML]="topic.t_from"></span>&nbsp;<span class="font-12">@</span><span class="font-12" [innerHTML]="topic.t_to"></span>:</h2>
                     <p [innerHTML]="topic.t_time" class="topic-time"></p>
                 </ion-item>
-                <ion-card-content>
+                <ion-card-content class="bgc-reply">
                     <p [innerHTML]="topic.t_con"></p>
                 </ion-card-content>
-                <p class="reply-card-btns">
+                <p class="reply-card-btns" class="bgc-reply">
                     <button ion-button icon-left clear small (click)="vote(topic,1)" class="color-green">
                         <ion-icon name="thumbs-up"></ion-icon>
                         <div [innerHTML]="topic.vote_up"></div>

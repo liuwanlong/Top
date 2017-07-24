@@ -25,7 +25,6 @@ export class TopicDetailPage {
         this.topic = navParams.data;
         ts.getTopicChildren(this.topic.t_id).then(data => {
             this.topics = data;
-            console.log(data);
         })
     }
 

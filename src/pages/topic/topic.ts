@@ -16,9 +16,10 @@ export class TopicPage implements OnInit {
     topics: any;
     topic: any;
     user: User;
+    num: number;
 
     ngOnInit(): void {
-
+        this.num = 1;
     }
 
     constructor(public navCtrl: NavController,
@@ -29,8 +30,37 @@ export class TopicPage implements OnInit {
                 private ts: TopicServiceProvider,
                 public http: Http) {
         ts.getTopicDetail(navParams.data).then(data => {
-            this.topics = data;
+            this.topics = data.reverse();
         })
+    }
+
+    doOrder(num) {
+        this.num = num;
+        var data = this.topics;
+        for (var i = 0; i < data.length; i++) {
+            for (var j = 0; j < data.length - i - 1; j++) {
+                if (num == 2) {
+                    if ((data[j].rp_count + data[j].vote_up) < (data[j + 1].rp_count + data[j + 1].vote_up)) {
+                        let item = data[j];
+                        data[j] = data[j + 1];
+                        data[j + 1] = item;
+                    }
+                } else if (num == 1) {
+                    if (data[j].t_id < data[j + 1].t_id) {
+                        let item = data[j];
+                        data[j] = data[j + 1];
+                        data[j + 1] = item;
+                    }
+                } else if (num == 0) {
+                    if (data[j].t_id > data[j + 1].t_id) {
+                        let item = data[j];
+                        data[j] = data[j + 1];
+                        data[j + 1] = item;
+                    }
+                }
+            }
+        }
+        this.topics = data;
     }
 
     goTopicDetail(topic) {

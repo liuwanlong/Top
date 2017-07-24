@@ -1,14 +1,19 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>评论详情</ion-title>
+        <ion-title>评论列表</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
     <ion-card class="topic-card">
         <ion-card-header>
-            <ion-icon name=""></ion-icon>
-            全部评论
+            <ion-icon name="logo-buffer"></ion-icon>
+            <span>全部评论</span>
+            <span class="order-btn">
+                <button ion-button [ngClass]="{'selected':num==2}"  clear (click)="doOrder(2)" class="color-rp font-12">最热</button>
+                <button ion-button [ngClass]="{'selected':num==1}"  clear (click)="doOrder(1)" class="color-rp font-12">最新</button>
+                <button ion-button [ngClass]="{'selected':num==0}"  clear (click)="doOrder(0)" class="color-rp font-12">最早</button>
+            </span>
         </ion-card-header>
         <ion-list>
             <ion-item *ngFor="let topic of topics" class="topic-box">
@@ -24,7 +29,7 @@
                     <span *ngIf="topic.rp_count!=0" ion-button color="dark" clear (click)="goTopicDetail(topic)">
                         展开评论
                     </span>
-                    <button ion-button icon-left clear small  (click)="vote(topic,1)" class="color-green">
+                    <button ion-button icon-left clear small (click)="vote(topic,1)" class="color-green">
                         <ion-icon name="thumbs-up" class="color-green"></ion-icon>
                         <div [innerHTML]="topic.vote_up"></div>
                     </button>
