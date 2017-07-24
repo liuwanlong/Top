@@ -35,6 +35,7 @@ export class HomePage implements OnInit {
   getData(typeNum) {
     this.ns.getNews(typeNum).then(data => {
       this.initTopNews = data;
+      this.initTopNews=this.initTopNews.reverse();
       this.banner_slides = this.initTopNews.slice(0,3);
       this.list_slides = this.initTopNews.slice(3,6);
     })

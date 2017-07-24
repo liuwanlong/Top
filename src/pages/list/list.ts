@@ -53,7 +53,7 @@ export class ListPage implements OnInit {
   }
   getListNews() {
     this.ns.getNews(this.navParams.data).then(data => {
-      this.list_slides = data;
+      this.list_slides = data.reverse();
     })
   }
     doRefresh(refresher) {
