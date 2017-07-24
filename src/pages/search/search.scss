@@ -1,9 +1,17 @@
-.searchBtn{
-  width: 42px;
-  height: 30px;
-  margin-top: 9px;
-  color: rgba(0, 0, 0, 0.28);
-  border-color: rgba(0, 0, 0, 0.28);
-  margin-left: -6px;
-  font-size: 14px
+page-search{
+  .searchBtn{
+    width: 42px;
+    height: 30px;
+    margin-top: 9px;
+    color: rgba(0, 0, 0, 0.28);
+    border-color: rgba(0, 0, 0, 0.28);
+    margin-left: -6px;
+    font-size: 14px
+  }
+  ion-col.col {
+    padding: 0 5px;
+  }
+  .searchbar-ios div.searchbar-search-icon{
+    top: 11px;
+  }
 }

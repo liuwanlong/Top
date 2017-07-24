@@ -27,6 +27,20 @@ export class CollectPage {
         })
     }
 
+    delItem(news_id:string){
+        this.gc.delCollection(this.currentUser.mobile,news_id).then(data=>{
+            if(data){
+                for (let idx in this.news){
+                    if (this.news[idx]['news_id'] == news_id){
+                        this.news.splice(~~(idx),1);
+                    }
+                }
+            }else{
+                console.log('删除失败');
+            }
+        })
+    }
+
     goDetail(slide) {
         this.navCtrl.push(DetailPage, slide);
     }

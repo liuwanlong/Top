@@ -1,5 +1,42 @@
 page-collect {
-  .row .news_title{
-    margin-top: 12px;
+  .news_title{
+    margin: 8px 0px 0px;
+    font-size: 16px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  .news_body{
+    margin: 6px 0px 0px;
+    height: 16px;
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+  }
+  .news_icon{
+    margin: 12px 0 6px 0;
+  }
+
+  ion-list{
+    padding-top: 20px;
+  }
+  ion-label.label{
+    margin: 0;
+  }
+  .list-ios .item-block .item-inner{
+    border-bottom:none;
+  }
+  .item-ios{
+    padding: 0 8px;
+  }
+  .list-ios > .item-block:last-child,
+  .list-ios > .item-wrapper:last-child .item-block{
+    border: none;
+  }
+  .list-ios ion-item-options{
+    border: none;
   }
 }
