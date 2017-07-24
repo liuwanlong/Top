@@ -4,6 +4,7 @@ import {RegisterPage} from "../register/register";
 import {LoginPage} from "../login/login";
 import {User} from "../../app/user";
 import {SimpleAlertProvider} from "../../providers/simple-alert/simple-alert";
+import {CollectPage} from "../collect/collect";
 
 @Component({
   selector: 'page-mine',
@@ -11,6 +12,7 @@ import {SimpleAlertProvider} from "../../providers/simple-alert/simple-alert";
 })
 export class MinePage {
   currentUser: User;
+    slide: any;
   // items = [
   //   {icon: "star", name: "我的收藏", nav: CollectionPage},
   //   {icon: "text", name: "消息通知", nav: NotifyPage},
@@ -20,6 +22,8 @@ export class MinePage {
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               private as: SimpleAlertProvider) {
+    this.currentUser = new User();
+      this.slide = navParams.data;
     // localStorage.currentUser = null;      // 测试用，用来清除当前登录用户
   }
 
@@ -45,5 +49,13 @@ export class MinePage {
   toLoginPage(param?: Object) {
     this.navCtrl.push(LoginPage, param);
   }
+    doPrompt(news_id) {
+        this.currentUser = JSON.parse(localStorage.currentUser);
+        if (!this.currentUser) {
+            return this.as.showAlert('', '没登录,你还没有收藏哟', ['确定']);
+        }else{
+            this.navCtrl.push(CollectPage);
+        }
+    }
 
 }
