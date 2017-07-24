@@ -1,46 +1,36 @@
-import {Component, OnInit} from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import {Http} from "@angular/http";
+import {Component} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
+import {GetCollectionProvider} from "../../providers/get-collection/get-collection";
+import {User} from "../../app/user";
+import {DetailPage} from "../detail/detail";
 
-/**
- * Generated class for the CollectPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 @Component({
-  selector: 'page-collect',
-  templateUrl: 'collect.html',
+    selector: 'page-collect',
+    templateUrl: 'collect.html',
 })
-export class CollectPage implements OnInit {
-    banner_slides: any;
-    allnews: {}[];
+export class CollectPage {
+    currentUser: User;
+    noNews: boolean;
     news: {}[];
 
-    ngOnInit(): void {
-        this.getData();
+    constructor(public navCtrl: NavController, public np: NavParams,
+                public gc: GetCollectionProvider) {
+        this.currentUser = np.get('user');
+        this.gc.myCollection(this.currentUser.mobile).then(data => {
+            if (data.result.length > 0) {
+                this.news = data.result;
+                this.noNews = false;
+            } else {
+                this.noNews = true;
+            }
+        })
     }
 
-  constructor(public navCtrl: NavController, public http: Http) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CollectPage');
-  }
-    getData() {
-        return this.http.get('http://localhost:3000/users/')
-            .toPromise()
-            .then(res => {
-                var data = res.json().data;
-                this.allnews = data;
-                var endlength = this.allnews.length;
-                this.banner_slides = this.allnews.slice(0, 2);
-                this.news = this.allnews.slice(3, endlength);
-                console.log(this.news.length);
-            }).catch(this.handleError)
+    goDetail(slide) {
+        this.navCtrl.push(DetailPage, slide);
     }
-    handleError(error) {
-        return Promise.reject(error.message || error);
+
+    ionViewDidLoad() {
     }
 }

@@ -5,6 +5,7 @@ import {User} from "../../app/user";
 import {SimpleAlertProvider} from "../../providers/simple-alert/simple-alert";
 import {GettimeProvider} from "../../providers/gettime/gettime";
 import {Http} from "@angular/http";
+import {GetCollectionProvider} from "../../providers/get-collection/get-collection";
 
 /**
  * Generated class for the DetailPage page.
@@ -19,6 +20,7 @@ import {Http} from "@angular/http";
 })
 export class DetailPage {
     slide: any;
+    isColl: boolean;
     user: User;
 
     constructor(public navCtrl: NavController,
@@ -26,6 +28,7 @@ export class DetailPage {
                 public alertCtrl: AlertController,
                 public sa: SimpleAlertProvider,
                 public gt: GettimeProvider,
+                public gc: GetCollectionProvider,
                 public http: Http) {
         this.user = new User();
         this.slide = navParams.data;
@@ -44,8 +47,11 @@ export class DetailPage {
         this.navCtrl.push(TopicPage, id);
     }
 
-    ionViewWillEnter(){
-        this.user = localStorage.currentUser? JSON.parse(localStorage.currentUser): null;
+    ionViewWillEnter() {
+        this.user = localStorage.currentUser ? JSON.parse(localStorage.currentUser) : null;
+        this.gc.isHasCollection(this.user.mobile, this.slide.news_id).then(data => {
+            this.isColl = data;
+        });
     }
 
     doPrompt(news_id) {
@@ -95,20 +101,22 @@ export class DetailPage {
         prompt.present();
     }
 
-    collect(news_id:string){
-        if (!this.user.mobile){
-            this.sa.showAlert('提示','您还没有登录！请登录后重试',['确定']);
-            return false;
+    collect(news_id: string) {
+        if (!this.user) {
+            return this.sa.showAlert('提示', '您还没有登录！请登录后重试', ['确定']);
         }
-        let news = {
-            mobile: this.user.mobile,
-            news_id: news_id
-        }
-        this.http.post('http://localhost:3000/users/news', news)
-            .toPromise().then(result => {
-                console.log('ok')
-        });
 
+        if(!this.isColl){           // 添加收藏
+            this.gc.addCollection(this.user.mobile, news_id).then(data=>{
+                this.isColl = data;
+            })
+        }else{                      // 取消收藏
+            return this.sa.showConfirm('提示','您已收藏改文章，是否取消该收藏？',['取消',()=>{}],['确定',()=>{
+                this.gc.delCollection(this.user.mobile, news_id).then(data=>{
+                    this.isColl = !data;
+                })
+            }]);
+        }
     }
 
 }

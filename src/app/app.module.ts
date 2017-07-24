@@ -25,6 +25,7 @@ import {VideoDetailPage} from "../pages/video-detail/video-detail";
 import {SearchPage} from "../pages/search/search";
 import {GettimeProvider} from '../providers/gettime/gettime';
 import {TopicDetailPage} from "../pages/topic-detail/topic-detail";
+import { GetCollectionProvider } from '../providers/get-collection/get-collection';
 import {CollectPage} from "../pages/collect/collect";
 
 @NgModule({
@@ -79,7 +80,8 @@ import {CollectPage} from "../pages/collect/collect";
         {provide: ErrorHandler, useClass: IonicErrorHandler},
         SimpleAlertProvider,
         TopicServiceProvider,
-        GettimeProvider
+        GettimeProvider,
+    GetCollectionProvider
     ]
 })
 export class AppModule {

@@ -8,7 +8,6 @@
 
 
 <ion-content padding>
-  <div>
     <ion-row *ngFor="let slide of news" (click)="goDetail(slide)">
       <ion-col col-4>
         <div class="news_left">
@@ -29,5 +28,10 @@
         </p>
       </ion-col>
     </ion-row>
-  </div>
+
+    <ion-card *ngIf="noNews">
+      <ion-card-header>
+        您还没有收藏新闻，快去添加吧~
+      </ion-card-header>
+    </ion-card>
 </ion-content>
