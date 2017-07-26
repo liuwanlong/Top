@@ -25,7 +25,7 @@ export class NewsPage implements OnInit {
     }
 
     getData() {
-        return this.http.get('http://localhost:3000/users/')
+        return this.http.get('http://59.110.165.55/users/')
             .toPromise()
             .then(res => {
                 var data = res.json().data;
@@ -39,7 +39,7 @@ export class NewsPage implements OnInit {
 
     // getMore
     getMore(page: number) {
-        return this.http.get('http://localhost:3000/users/page/' + page)
+        return this.http.get('http://59.110.165.55/users/page/' + page)
             .toPromise()
             .then(res => {
                 var data = res.json().data;

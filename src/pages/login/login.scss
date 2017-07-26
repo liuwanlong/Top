@@ -1,5 +1,11 @@
 page-login {
-  overflow: hidden;
+
+  .item-md ion-icon[item-start]{
+    margin-left: 24px;
+  }
+  .item-md ion-icon[item-start] + .item-inner{
+    margin-left: 0;
+  }
 }
 
 .login_bg {

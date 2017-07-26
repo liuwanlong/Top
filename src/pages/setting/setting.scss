@@ -3,6 +3,10 @@ page-setting {
     background-color: #fafafa;
   }
 
+  ion-list.list:first-child{
+    margin-top: 20px;
+  }
+
   .item-inner .label {
     font-size: 16px;
   }

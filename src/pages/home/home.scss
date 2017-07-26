@@ -1,8 +1,11 @@
 page-home {
-
-}
-.home-header{
-  height: 46px;
+  .logo{
+    margin-top: 4px;
+    width: 108px;
+    height: 27px;
+    background: url("../assets/images/logo_tn.png") center;
+    background-size: cover;
+  }
 }
 .home-header ion-col{
   height: 45px;

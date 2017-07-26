@@ -3,7 +3,7 @@
     <ion-row>
       <ion-col col-4></ion-col>
       <ion-col col-4 text-center>
-        <img class="logo" src="/assets/images/logo.png">
+        <div class="logo"></div>
       </ion-col>
       <ion-col col-4 text-end>
         <ion-icon name="search" class="icon-search" (click)="search()"></ion-icon>
@@ -60,9 +60,8 @@
   <ion-refresher pulling-text="下拉刷新" (ionRefresh)="doRefresh($event)">
     <ion-refresher-content
             pullingIcon="arrow-dropdown"
-            pullingText="Pull to refresh"
-            refreshingSpinner="circles"
-            refreshingText="Refreshing...">
+            pullingText="松开刷新"
+            refreshingSpinner="circles">
     </ion-refresher-content>
   </ion-refresher>
 </ion-content>

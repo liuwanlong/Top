@@ -26,7 +26,7 @@ page-mine {
     margin-top: 6%;
   }
   ion-icon{
-    margin-bottom: 0 !important;
+    //margin-bottom: 0 !important;
   }
 
   button ion-icon {
@@ -73,4 +73,10 @@ page-mine {
     }
   }
 
+
+
+}
+
+.item-md ion-icon[item-start] + .item-inner{
+  margin-left: 6px;
 }

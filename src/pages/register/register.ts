@@ -45,7 +45,7 @@ export class RegisterPage {
 
     // 注册事件
     regSubmit(user: User) {
-        this.http.post('http://localhost:3000/users', user)
+        this.http.post('http://59.110.165.55/users', user)
             .toPromise().then(result => {
             if (result.json().result == 'nameExit') {
                 this.as.showAlert('注册结果','该用户名已被注册！',['确定']);

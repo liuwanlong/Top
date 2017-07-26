@@ -31,10 +31,10 @@ export class DetailPage {
                 public gc: GetCollectionProvider,
                 public toastCtrl: ToastController,
                 public http: Http) {
-        this.user = new User();
+        this.user = null;
         this.slide = navParams.data;
         this.slide.v_count += 1;
-        http.post('http://localhost:3000/view', {id: this.slide.news_id})
+        http.post('http://59.110.165.55/view', {id: this.slide.news_id})
             .toPromise().then(res => {
             if (res.json().success) {
                 console.log('v_count++成功');
@@ -58,7 +58,6 @@ export class DetailPage {
     }
 
     doPrompt(news_id) {
-        this.user = JSON.parse(localStorage.currentUser);
         if (!this.user) {
             return this.sa.showAlert('', '还没登录,不能发表评论哦!', ['确定']);
         }
@@ -88,7 +87,7 @@ export class DetailPage {
                             t_time: this.gt.getNowFormatDate()
                         };
                         console.log(topic);
-                        this.http.post('http://localhost:3000/topic', topic)
+                        this.http.post('http://59.110.165.55/topic', topic)
                             .toPromise().then(res => {
                             if (res.json().success) {
                                 this.slide.r_count += 1;
@@ -117,7 +116,7 @@ export class DetailPage {
             // return this.sa.showConfirm('提示','您已收藏改文章，是否取消该收藏？',['取消',()=>{}],['确定',()=>{
                 this.gc.delCollection(this.user.mobile, news_id).then(data=>{
                     this.isColl = !data;
-                    this.presentToast('已取消对该新闻的收藏',30000,'top');
+                    this.presentToast('已取消对该新闻的收藏',2000,'top');
                 })
             // }]);
         }
