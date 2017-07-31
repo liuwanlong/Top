@@ -41,4 +41,14 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
+  <ion-fab right bottom>
+    <button ion-fab color="skyblue" mini><ion-icon name="arrow-dropleft"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="selectClass(1)">热门</button>
+      <button ion-fab (click)="selectClass(13)">搞笑</button>
+      <button ion-fab (click)="selectClass(63)">舞蹈</button>
+      <button ion-fab (click)="selectClass(450)">手工</button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>

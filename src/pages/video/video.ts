@@ -11,7 +11,9 @@ import {SearchPage} from "../search/search";
 export class VideoPage implements OnInit {
 
     newsArr = [];
+    data = [];
     number = 5;
+    id = 1;
     isHasMore: boolean;
 
     constructor(public navCtrl: NavController,
@@ -23,8 +25,7 @@ export class VideoPage implements OnInit {
     }
 
     getData() {
-        this.number += 5;
-        return this.http.get('http://59.110.165.55:1007/video/' + this.number)
+        return this.http.get('http://59.110.165.55:1007/video?id='+this.id+'&number='+this.number)
             .toPromise()
             .then(res => {
                 this.newsArr = res.json();
@@ -34,6 +35,13 @@ export class VideoPage implements OnInit {
     videoDetailPage(news: object, newsArr?: object) {
         var data = [news, newsArr];
         this.navCtrl.push(VideoDetailPage, data);
+    }
+    selectClass(id:number){
+        this.isHasMore = false;
+        console.log(id);
+        this.id = id;
+        this.number = 5;
+       this.getData();
     }
 
     search() {
@@ -53,7 +61,7 @@ export class VideoPage implements OnInit {
     doInfinite(infiniteScroll) {
         this.number += 5;
         setTimeout(() => {
-            if (this.number >= 60) {
+            if (this.number >= 20) {
                 infiniteScroll.complete();
                 this.isHasMore = true;
                 return;
