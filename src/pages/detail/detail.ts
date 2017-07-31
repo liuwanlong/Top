@@ -34,7 +34,7 @@ export class DetailPage {
         this.user = null;
         this.slide = navParams.data;
         this.slide.v_count += 1;
-        http.post('http://59.110.165.55/view', {id: this.slide.news_id})
+        http.post('http://59.110.165.55:1007/view', {id: this.slide.news_id})
             .toPromise().then(res => {
             if (res.json().success) {
                 console.log('v_count++成功');
@@ -87,7 +87,7 @@ export class DetailPage {
                             t_time: this.gt.getNowFormatDate()
                         };
                         console.log(topic);
-                        this.http.post('http://59.110.165.55/topic', topic)
+                        this.http.post('http://59.110.165.55:1007/topic', topic)
                             .toPromise().then(res => {
                             if (res.json().success) {
                                 this.slide.r_count += 1;

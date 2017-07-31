@@ -30,7 +30,7 @@ export class LoginPage {
             'to_center',
             ['mobile','手机号（11位）'],['email','邮箱'],
             ['取消',()=>{return}],['提交',(data)=>{
-                this.http.post('http://59.110.165.55/users/find',data)
+                this.http.post('http://59.110.165.55:1007/users/find',data)
                     .toPromise().then(result=>{
                     if(result.json().result==false){
                         this.as.showAlert('抱歉！','您输入的信息有误，找回密码失败',['确定']);
@@ -44,7 +44,7 @@ export class LoginPage {
                                     return false;
                                 }else{
                                     login.password = pwd.password;
-                                    this.http.put('http://59.110.165.55/users/revise',login)
+                                    this.http.put('http://59.110.165.55:1007/users/revise',login)
                                         .toPromise().then(result=>{
                                         if(result.json().result){
                                             this.as.showAlert('提示','您的密码已成功修改！',['知道了']);
@@ -62,7 +62,7 @@ export class LoginPage {
     }
 
     loginSubmit(login: Login) {
-        this.http.post('http://59.110.165.55/users/login',login)
+        this.http.post('http://59.110.165.55:1007/users/login',login)
             .toPromise().then(result=>{
             if(result.json().result==false){
                 this.as.showAlert('登陆结果','登录失败！请检查您的用户名或密码',['确定']);

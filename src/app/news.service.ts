@@ -26,7 +26,7 @@ export class NewsService {
    * */
   getNews(typeNum) {
     console.log(this.type[typeNum - 1]);
-    return this.http.get('http://59.110.165.55/getnews' + '/' + this.type[typeNum - 1])
+    return this.http.get('http://59.110.165.55:1007/getnews' + '/' + this.type[typeNum - 1])
       .toPromise()
       .then(res => {
         var data = res.json().data;

@@ -28,7 +28,7 @@ export class SearchPage implements OnInit{
     }
 
   getdata(val?:string){
-    return this.http.get('http://59.110.165.55/users/'+ val)
+    return this.http.get('http://59.110.165.55:1007/users/'+ val)
       .toPromise()
       .then(res => {
         var data = res.json().data;

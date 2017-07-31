@@ -24,7 +24,7 @@ export class VideoPage implements OnInit {
 
     getData() {
         this.number += 5;
-        return this.http.get('http://59.110.165.55/video/' + this.number)
+        return this.http.get('http://59.110.165.55:1007/video/' + this.number)
             .toPromise()
             .then(res => {
                 this.newsArr = res.json();
